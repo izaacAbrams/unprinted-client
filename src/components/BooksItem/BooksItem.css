@@ -1,0 +1,9 @@
+.BooksItem {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.BooksItem__cover {
+    width: 200px;
+    height: 300px;
+}

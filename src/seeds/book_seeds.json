@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "The Great Gatsby",
+    "author": "F Scott Fitzgerald",
+    "cover_img": "https://res.cloudinary.com/unprinted/image/upload/v1592686822/unprinted-images/ex_book_1_ypo4yj.jpg",
+    "content": [
+      {
+      "section": 1,
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat suscipit enim at venenatis. Duis nunc risus, lacinia ut massa quis, posuere aliquet quam. Fusce eros risus, lobortis vitae felis et, consectetur posuere neque. Duis eu ultrices urna. Quisque dictum nunc ex, sed scelerisque sem pulvinar vitae. Nam a pretium eros, sit amet pretium nibh. Donec nec lorem dolor. Maecenas id eros sem. Ut pulvinar eros ac tellus varius feugiat. Ut ullamcorper leo a ipsum aliquet pretium. Integer vel eros sed elit dignissim elementum. Sed quis semper tellus. Nullam placerat scelerisque leo. Pellentesque eget diam feugiat, viverra felis id, venenatis enim. Phasellus suscipit metus vel mi bibendum, vitae fermentum risus hendrerit. Donec sagittis justo imperdiet nibh tempus lobortis. Morbi eu egestas nisl. Praesent congue quam nec euismod tempus. Vivamus ac nisi rutrum mi egestas vulputate sed et ipsum. In sem augue, dictum ut neque at, congue congue urna. Donec feugiat sagittis libero. Mauris semper enim nisi. Donec in hendrerit sem, eu accumsan diam. Maecenas convallis nisl vel lorem aliquet gravida."
+    },
+    {
+      "section": 2,
+      "content": "Vivamus accumsan purus in ullamcorper pulvinar. Sed sollicitudin, nibh et dignissim convallis, dui lorem vehicula augue, sit amet interdum elit felis et lectus. Aliquam quis metus non diam tincidunt consectetur. Curabitur varius convallis maximus. Cras ex metus, pretium eget leo eget, tempus aliquet lectus. Morbi quam diam, viverra in tempus quis, ultricies ut mauris. Duis volutpat tellus in dui faucibus, vitae feugiat velit feugiat. Aenean semper metus enim, in lobortis ipsum bibendum et. Vivamus pellentesque lacus aliquet dolor tempus molestie. Vivamus a nulla orci. Nulla vel dolor et nulla pellentesque dignissim quis nec orci. Donec lobortis auctor placerat. Pellentesque tempus nec urna ac venenatis. Cras eu felis auctor, sollicitudin nibh vel, pharetra tellus. Integer gravida faucibus ligula, a eleifend lectus. Integer iaculis dolor id euismod convallis. Mauris volutpat efficitur placerat. Nunc sit amet ultrices nulla. Vestibulum sit amet accumsan lorem. Nunc dignissim orci mi, at ullamcorper metus sagittis a. Cras vitae sapien aliquet, venenatis lacus at, mattis nisl. Phasellus a rhoncus nibh, quis vulputate augue."
+    }
+  ],
+  "created_by": 1,
+  "price": "5.00"
+  },
+  {
+    "id": 2,
+    "title": "The War of the Worlds",
+    "author": "H.G. Wells",
+    "cover_img": "https://res.cloudinary.com/unprinted/image/upload/v1592686824/unprinted-images/ex_book_2_poeczi.jpg",
+    "content": [
+      {
+      "section": 1,
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat suscipit enim at venenatis. Duis nunc risus, lacinia ut massa quis, posuere aliquet quam. Fusce eros risus, lobortis vitae felis et, consectetur posuere neque. Duis eu ultrices urna. Quisque dictum nunc ex, sed scelerisque sem pulvinar vitae. Nam a pretium eros, sit amet pretium nibh. Donec nec lorem dolor. Maecenas id eros sem. Ut pulvinar eros ac tellus varius feugiat. Ut ullamcorper leo a ipsum aliquet pretium. Integer vel eros sed elit dignissim elementum. Sed quis semper tellus. Nullam placerat scelerisque leo. Pellentesque eget diam feugiat, viverra felis id, venenatis enim. Phasellus suscipit metus vel mi bibendum, vitae fermentum risus hendrerit. Donec sagittis justo imperdiet nibh tempus lobortis. Morbi eu egestas nisl. Praesent congue quam nec euismod tempus. Vivamus ac nisi rutrum mi egestas vulputate sed et ipsum. In sem augue, dictum ut neque at, congue congue urna. Donec feugiat sagittis libero. Mauris semper enim nisi. Donec in hendrerit sem, eu accumsan diam. Maecenas convallis nisl vel lorem aliquet gravida."
+    },
+    {
+      "section": 2,
+      "content": "Vivamus accumsan purus in ullamcorper pulvinar. Sed sollicitudin, nibh et dignissim convallis, dui lorem vehicula augue, sit amet interdum elit felis et lectus. Aliquam quis metus non diam tincidunt consectetur. Curabitur varius convallis maximus. Cras ex metus, pretium eget leo eget, tempus aliquet lectus. Morbi quam diam, viverra in tempus quis, ultricies ut mauris. Duis volutpat tellus in dui faucibus, vitae feugiat velit feugiat. Aenean semper metus enim, in lobortis ipsum bibendum et. Vivamus pellentesque lacus aliquet dolor tempus molestie. Vivamus a nulla orci. Nulla vel dolor et nulla pellentesque dignissim quis nec orci. Donec lobortis auctor placerat. Pellentesque tempus nec urna ac venenatis. Cras eu felis auctor, sollicitudin nibh vel, pharetra tellus. Integer gravida faucibus ligula, a eleifend lectus. Integer iaculis dolor id euismod convallis. Mauris volutpat efficitur placerat. Nunc sit amet ultrices nulla. Vestibulum sit amet accumsan lorem. Nunc dignissim orci mi, at ullamcorper metus sagittis a. Cras vitae sapien aliquet, venenatis lacus at, mattis nisl. Phasellus a rhoncus nibh, quis vulputate augue."
+    }
+  ],
+  "created_by": 2,
+  "price": "5.00"
+  },
+  {
+    "id": 3,
+    "title": "The Wizard of Oz",
+    "author": "L Frank Baum",
+    "cover_img": "https://res.cloudinary.com/unprinted/image/upload/v1592686823/unprinted-images/ex_book_3_j06t3n.png",
+    "content": [
+      {
+      "section": 1,
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat suscipit enim at venenatis. Duis nunc risus, lacinia ut massa quis, posuere aliquet quam. Fusce eros risus, lobortis vitae felis et, consectetur posuere neque. Duis eu ultrices urna. Quisque dictum nunc ex, sed scelerisque sem pulvinar vitae. Nam a pretium eros, sit amet pretium nibh. Donec nec lorem dolor. Maecenas id eros sem. Ut pulvinar eros ac tellus varius feugiat. Ut ullamcorper leo a ipsum aliquet pretium. Integer vel eros sed elit dignissim elementum. Sed quis semper tellus. Nullam placerat scelerisque leo. Pellentesque eget diam feugiat, viverra felis id, venenatis enim. Phasellus suscipit metus vel mi bibendum, vitae fermentum risus hendrerit. Donec sagittis justo imperdiet nibh tempus lobortis. Morbi eu egestas nisl. Praesent congue quam nec euismod tempus. Vivamus ac nisi rutrum mi egestas vulputate sed et ipsum. In sem augue, dictum ut neque at, congue congue urna. Donec feugiat sagittis libero. Mauris semper enim nisi. Donec in hendrerit sem, eu accumsan diam. Maecenas convallis nisl vel lorem aliquet gravida."
+    },
+    {
+      "section": 2,
+      "content": "Vivamus accumsan purus in ullamcorper pulvinar. Sed sollicitudin, nibh et dignissim convallis, dui lorem vehicula augue, sit amet interdum elit felis et lectus. Aliquam quis metus non diam tincidunt consectetur. Curabitur varius convallis maximus. Cras ex metus, pretium eget leo eget, tempus aliquet lectus. Morbi quam diam, viverra in tempus quis, ultricies ut mauris. Duis volutpat tellus in dui faucibus, vitae feugiat velit feugiat. Aenean semper metus enim, in lobortis ipsum bibendum et. Vivamus pellentesque lacus aliquet dolor tempus molestie. Vivamus a nulla orci. Nulla vel dolor et nulla pellentesque dignissim quis nec orci. Donec lobortis auctor placerat. Pellentesque tempus nec urna ac venenatis. Cras eu felis auctor, sollicitudin nibh vel, pharetra tellus. Integer gravida faucibus ligula, a eleifend lectus. Integer iaculis dolor id euismod convallis. Mauris volutpat efficitur placerat. Nunc sit amet ultrices nulla. Vestibulum sit amet accumsan lorem. Nunc dignissim orci mi, at ullamcorper metus sagittis a. Cras vitae sapien aliquet, venenatis lacus at, mattis nisl. Phasellus a rhoncus nibh, quis vulputate augue."
+    }
+  ],
+  "created_by": 3,
+  "price": "5.00"
+  },
+  {
+    "id": 4,
+    "title": "Sherlock Holmes",
+    "author": "Sir Authur Conan Doyle",
+    "cover_img": "https://res.cloudinary.com/unprinted/image/upload/v1592686823/unprinted-images/ex_book_4_i3wqmj.jpg",
+    "content": [
+      {
+      "section": 1,
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat suscipit enim at venenatis. Duis nunc risus, lacinia ut massa quis, posuere aliquet quam. Fusce eros risus, lobortis vitae felis et, consectetur posuere neque. Duis eu ultrices urna. Quisque dictum nunc ex, sed scelerisque sem pulvinar vitae. Nam a pretium eros, sit amet pretium nibh. Donec nec lorem dolor. Maecenas id eros sem. Ut pulvinar eros ac tellus varius feugiat. Ut ullamcorper leo a ipsum aliquet pretium. Integer vel eros sed elit dignissim elementum. Sed quis semper tellus. Nullam placerat scelerisque leo. Pellentesque eget diam feugiat, viverra felis id, venenatis enim. Phasellus suscipit metus vel mi bibendum, vitae fermentum risus hendrerit. Donec sagittis justo imperdiet nibh tempus lobortis. Morbi eu egestas nisl. Praesent congue quam nec euismod tempus. Vivamus ac nisi rutrum mi egestas vulputate sed et ipsum. In sem augue, dictum ut neque at, congue congue urna. Donec feugiat sagittis libero. Mauris semper enim nisi. Donec in hendrerit sem, eu accumsan diam. Maecenas convallis nisl vel lorem aliquet gravida."
+    },
+    {
+      "section": 2,
+      "content": "Vivamus accumsan purus in ullamcorper pulvinar. Sed sollicitudin, nibh et dignissim convallis, dui lorem vehicula augue, sit amet interdum elit felis et lectus. Aliquam quis metus non diam tincidunt consectetur. Curabitur varius convallis maximus. Cras ex metus, pretium eget leo eget, tempus aliquet lectus. Morbi quam diam, viverra in tempus quis, ultricies ut mauris. Duis volutpat tellus in dui faucibus, vitae feugiat velit feugiat. Aenean semper metus enim, in lobortis ipsum bibendum et. Vivamus pellentesque lacus aliquet dolor tempus molestie. Vivamus a nulla orci. Nulla vel dolor et nulla pellentesque dignissim quis nec orci. Donec lobortis auctor placerat. Pellentesque tempus nec urna ac venenatis. Cras eu felis auctor, sollicitudin nibh vel, pharetra tellus. Integer gravida faucibus ligula, a eleifend lectus. Integer iaculis dolor id euismod convallis. Mauris volutpat efficitur placerat. Nunc sit amet ultrices nulla. Vestibulum sit amet accumsan lorem. Nunc dignissim orci mi, at ullamcorper metus sagittis a. Cras vitae sapien aliquet, venenatis lacus at, mattis nisl. Phasellus a rhoncus nibh, quis vulputate augue."
+    }
+  ],
+  "created_by": 4,
+  "price": "5.00"
+  },
+  {
+    "id": 5,
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J K Rowling",
+    "cover_img": "https://res.cloudinary.com/unprinted/image/upload/v1592686824/unprinted-images/ex_book_5_pnsoha.jpg",
+    "content": [
+      {
+      "section": 1,
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat suscipit enim at venenatis. Duis nunc risus, lacinia ut massa quis, posuere aliquet quam. Fusce eros risus, lobortis vitae felis et, consectetur posuere neque. Duis eu ultrices urna. Quisque dictum nunc ex, sed scelerisque sem pulvinar vitae. Nam a pretium eros, sit amet pretium nibh. Donec nec lorem dolor. Maecenas id eros sem. Ut pulvinar eros ac tellus varius feugiat. Ut ullamcorper leo a ipsum aliquet pretium. Integer vel eros sed elit dignissim elementum. Sed quis semper tellus. Nullam placerat scelerisque leo. Pellentesque eget diam feugiat, viverra felis id, venenatis enim. Phasellus suscipit metus vel mi bibendum, vitae fermentum risus hendrerit. Donec sagittis justo imperdiet nibh tempus lobortis. Morbi eu egestas nisl. Praesent congue quam nec euismod tempus. Vivamus ac nisi rutrum mi egestas vulputate sed et ipsum. In sem augue, dictum ut neque at, congue congue urna. Donec feugiat sagittis libero. Mauris semper enim nisi. Donec in hendrerit sem, eu accumsan diam. Maecenas convallis nisl vel lorem aliquet gravida."
+    },
+    {
+      "section": 2,
+      "content": "Vivamus accumsan purus in ullamcorper pulvinar. Sed sollicitudin, nibh et dignissim convallis, dui lorem vehicula augue, sit amet interdum elit felis et lectus. Aliquam quis metus non diam tincidunt consectetur. Curabitur varius convallis maximus. Cras ex metus, pretium eget leo eget, tempus aliquet lectus. Morbi quam diam, viverra in tempus quis, ultricies ut mauris. Duis volutpat tellus in dui faucibus, vitae feugiat velit feugiat. Aenean semper metus enim, in lobortis ipsum bibendum et. Vivamus pellentesque lacus aliquet dolor tempus molestie. Vivamus a nulla orci. Nulla vel dolor et nulla pellentesque dignissim quis nec orci. Donec lobortis auctor placerat. Pellentesque tempus nec urna ac venenatis. Cras eu felis auctor, sollicitudin nibh vel, pharetra tellus. Integer gravida faucibus ligula, a eleifend lectus. Integer iaculis dolor id euismod convallis. Mauris volutpat efficitur placerat. Nunc sit amet ultrices nulla. Vestibulum sit amet accumsan lorem. Nunc dignissim orci mi, at ullamcorper metus sagittis a. Cras vitae sapien aliquet, venenatis lacus at, mattis nisl. Phasellus a rhoncus nibh, quis vulputate augue."
+    }
+  ],
+  "created_by": 5,
+  "price": "5.00"
+  },
+  {
+    "id": 6,
+    "title": "Moby Dick",
+    "author": "Herman Melville",
+    "cover_img": "https://res.cloudinary.com/unprinted/image/upload/v1592686823/unprinted-images/ex_book_6_agrqxq.png",
+    "content": [
+      {
+      "section": 1,
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat suscipit enim at venenatis. Duis nunc risus, lacinia ut massa quis, posuere aliquet quam. Fusce eros risus, lobortis vitae felis et, consectetur posuere neque. Duis eu ultrices urna. Quisque dictum nunc ex, sed scelerisque sem pulvinar vitae. Nam a pretium eros, sit amet pretium nibh. Donec nec lorem dolor. Maecenas id eros sem. Ut pulvinar eros ac tellus varius feugiat. Ut ullamcorper leo a ipsum aliquet pretium. Integer vel eros sed elit dignissim elementum. Sed quis semper tellus. Nullam placerat scelerisque leo. Pellentesque eget diam feugiat, viverra felis id, venenatis enim. Phasellus suscipit metus vel mi bibendum, vitae fermentum risus hendrerit. Donec sagittis justo imperdiet nibh tempus lobortis. Morbi eu egestas nisl. Praesent congue quam nec euismod tempus. Vivamus ac nisi rutrum mi egestas vulputate sed et ipsum. In sem augue, dictum ut neque at, congue congue urna. Donec feugiat sagittis libero. Mauris semper enim nisi. Donec in hendrerit sem, eu accumsan diam. Maecenas convallis nisl vel lorem aliquet gravida."
+    },
+    {
+      "section": 2,
+      "content": "Vivamus accumsan purus in ullamcorper pulvinar. Sed sollicitudin, nibh et dignissim convallis, dui lorem vehicula augue, sit amet interdum elit felis et lectus. Aliquam quis metus non diam tincidunt consectetur. Curabitur varius convallis maximus. Cras ex metus, pretium eget leo eget, tempus aliquet lectus. Morbi quam diam, viverra in tempus quis, ultricies ut mauris. Duis volutpat tellus in dui faucibus, vitae feugiat velit feugiat. Aenean semper metus enim, in lobortis ipsum bibendum et. Vivamus pellentesque lacus aliquet dolor tempus molestie. Vivamus a nulla orci. Nulla vel dolor et nulla pellentesque dignissim quis nec orci. Donec lobortis auctor placerat. Pellentesque tempus nec urna ac venenatis. Cras eu felis auctor, sollicitudin nibh vel, pharetra tellus. Integer gravida faucibus ligula, a eleifend lectus. Integer iaculis dolor id euismod convallis. Mauris volutpat efficitur placerat. Nunc sit amet ultrices nulla. Vestibulum sit amet accumsan lorem. Nunc dignissim orci mi, at ullamcorper metus sagittis a. Cras vitae sapien aliquet, venenatis lacus at, mattis nisl. Phasellus a rhoncus nibh, quis vulputate augue."
+    }
+  ],
+  "created_by": 6,
+  "price": "5.00"
+  }  
+]
