@@ -1,24 +1,32 @@
 import React, { Component } from "react";
 import UnprintedContext from "../../context/UnprintedContext";
+import "./BookDisplay.css";
 
 class BookDisplay extends Component {
 	static contextType = UnprintedContext;
 
-	getCurrentBook() {
-		return this.context.library.find(
-			(book) => book.id === parseInt(this.props.match.params.book_id)
-		);
-	}
 	render() {
-		console.log(this.getCurrentBook());
-		return (
-			<div className="BookDisplay">
-				<img
-					src={this.getCurrentBook().cover_img}
-					alt={`Cover for ${this.getCurrentBook().title}`}
-				/>
-			</div>
+		const current = this.context.getCurrentBook(
+			this.props.match.params.book_id
 		);
+		const current_book = this.context.getCurrentBook(
+			this.props.match.params.book_id
+		) ? (
+			<div className="BookDisplay__book">
+				<img
+					src={current.cover_img}
+					className="BookDisplay__img"
+					alt={`Cover for ${current.title}`}
+				/>
+				<h1>{current.title}</h1>
+				<h2>{current.author}</h2>
+				<p>{current.summary}</p>
+				<p>${current.price}</p>
+			</div>
+		) : (
+			<></>
+		);
+		return <div className="BookDisplay">{current_book}</div>;
 	}
 }
 

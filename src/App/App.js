@@ -7,7 +7,10 @@ import NewBook from "../routes/NewBook/NewBook";
 import Account from "../routes/Account/Account";
 import BookDisplay from "../routes/BookDisplay/BookDisplay";
 import UnprintedContext from "../context/UnprintedContext";
-import seedBooks from "../seeds/book_seeds.json";
+import CreatedBooksList from "../routes/CreatedBookList/CreatedBookList";
+import EditBook from "../routes/EditBook/EditBook";
+import AddSection from "../routes/AddSection/AddSection";
+import bookSeed from "../seeds/book_seeds.json";
 import "./App.css";
 
 class App extends Component {
@@ -15,11 +18,14 @@ class App extends Component {
 
 	state = {
 		library: [],
+		getCurrentBook: (book_id) => {
+			return this.state.library.find((book) => book.id === parseInt(book_id));
+		},
 	};
 
 	componentDidMount() {
 		this.setState({
-			library: seedBooks,
+			library: bookSeed,
 		});
 	}
 	render() {
@@ -35,6 +41,9 @@ class App extends Component {
 						<Route path={"/new"} component={NewBook} />
 						<Route path={"/account"} component={Account} />
 						<Route path={"/book/:book_id"} component={BookDisplay} />
+						<Route path={"/my-books"} component={CreatedBooksList} />
+						<Route path={"/edit/:book_id/:section"} component={EditBook} />
+						<Route path={"/:book_id/add-section"} component={AddSection} />
 					</Switch>
 				</UnprintedContext.Provider>
 			</div>
