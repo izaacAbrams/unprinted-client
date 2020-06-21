@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-
-import ImageApiService from "../../services/image-api-service";
 import "./NewBook.css";
 
 class NewBook extends Component {
@@ -17,16 +15,22 @@ class NewBook extends Component {
 		console.log(imageData);
 	}
 	handleFile(e) {
-		let imageData;
 		const file = e.target.files[0];
 		//creates reader to convert file to base64 encoded code for api upload
 		const reader = new FileReader();
 		reader.readAsDataURL(file);
-		reader.onload = function () {
-			imageData = reader.result;
+		reader.onloadend = () => {
+			this.setState({
+				cover_art: reader.result,
+			});
 		};
 	}
 	render() {
+		const image = this.state.cover_art ? (
+			<img src={this.state.cover_art} />
+		) : (
+			<></>
+		);
 		return (
 			<form onSubmit={(e) => this.handleSubmit(e)} className="NewBook">
 				<label htmlFor="NewBook__title">Title:</label>
@@ -42,7 +46,6 @@ class NewBook extends Component {
 					onChange={(e) => this.handleFile(e)}
 					id="NewBook__cover_art"
 				/>
-
 				<button type="submit">Submit</button>
 			</form>
 		);

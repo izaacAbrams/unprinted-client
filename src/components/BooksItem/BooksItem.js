@@ -3,6 +3,13 @@ import "./BooksItem.css";
 
 class BooksItem extends Component {
 	render() {
+		const bookTitle =
+			this.props.book.title.length > 24 ? (
+				<p>{this.props.book.title.split("").slice(0, 22).join("")}...</p>
+			) : (
+				<p>{this.props.book.title}</p>
+			);
+		console.log(this.props.book.title.split("").slice(0, 24).join(""));
 		return (
 			<div className="BooksItem">
 				<img
@@ -10,7 +17,7 @@ class BooksItem extends Component {
 					alt="Cover Art"
 					className="BooksItem__cover"
 				/>
-				<h1>{this.props.book.title}</h1>
+				{bookTitle}
 			</div>
 		);
 	}
