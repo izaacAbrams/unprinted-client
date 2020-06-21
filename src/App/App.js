@@ -25,6 +25,11 @@ class App extends Component {
 			const current = this.state.getCurrentBook(book_id);
 			this.state.library[current.id].content.push(newSection);
 		},
+		addImageData: (imageData) => {
+			this.setState({
+				image_data: imageData,
+			});
+		},
 	};
 
 	componentDidMount() {

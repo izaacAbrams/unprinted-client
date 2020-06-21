@@ -1,10 +1,30 @@
 import React, { Component } from "react";
+
+import ImageApiService from "../../services/image-api-service";
 import "./NewBook.css";
 
 class NewBook extends Component {
+	state = {
+		title: "",
+		author: "",
+		summary: "",
+		cover_art: "",
+	};
 	handleSubmit(e) {
 		e.preventDefault();
-		console.log(document.getElementById("NewBook__cover_art").value);
+	}
+	handleCoverArt(imageData) {
+		console.log(imageData);
+	}
+	handleFile(e) {
+		let imageData;
+		const file = e.target.files[0];
+		//creates reader to convert file to base64 encoded code for api upload
+		const reader = new FileReader();
+		reader.readAsDataURL(file);
+		reader.onload = function () {
+			imageData = reader.result;
+		};
 	}
 	render() {
 		return (
@@ -16,7 +36,12 @@ class NewBook extends Component {
 				<label htmlFor="NewBook__summary">Description:</label>
 				<input type="text" id="NewBook__summary" />
 				<label htmlFor="NewBook__cover_art">Cover Art:</label>
-				<input type="file" id="NewBook__cover_art" />
+				<input
+					type="file"
+					accept="image/x-png,image/jpeg"
+					onChange={(e) => this.handleFile(e)}
+					id="NewBook__cover_art"
+				/>
 
 				<button type="submit">Submit</button>
 			</form>

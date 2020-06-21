@@ -1,3 +1,6 @@
 export default {
-    API_ENDPOINT: proccess.env 
-}
+	REACT_APP_IMG_API_ENDPOINT: process.env.REACT_APP_IMG_API_ENDPOINT,
+	REACT_APP_IMG_API_KEY: process.env.REACT_APP_IMG_API_KEY || "change-key",
+	REACT_APP_IMG_API_SECRET: process.env.REACT_APP_IMG_API_SECRET,
+	REACT_APP_IMG_UPLOAD_PRESET: process.env.REACT_APP_IMG_UPLOAD_PRESET,
+};
