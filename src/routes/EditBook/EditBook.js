@@ -5,7 +5,7 @@ class EditBook extends Component {
 	static contextType = UnprintedContext;
 
 	render() {
-		const current = this.props.match.params.book_id - 1;
+		const current = this.props.match.params.book_id;
 		const currentBook = this.context.getCurrentBook(
 			this.props.match.params.book_id
 		);

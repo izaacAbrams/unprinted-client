@@ -1,6 +1,6 @@
 [
 	{
-		"id": 1,
+		"id": 0,
 		"title": "The Great Gatsby",
 		"author": "F Scott Fitzgerald",
 		"cover_img": "https://res.cloudinary.com/unprinted/image/upload/v1592686822/unprinted-images/ex_book_1_ypo4yj.jpg",
@@ -19,7 +19,7 @@
 		"price": "5.00"
 	},
 	{
-		"id": 2,
+		"id": 1,
 		"title": "The War of the Worlds",
 		"author": "H.G. Wells",
 		"cover_img": "https://res.cloudinary.com/unprinted/image/upload/v1592686824/unprinted-images/ex_book_2_poeczi.jpg",
@@ -38,7 +38,7 @@
 		"price": "5.00"
 	},
 	{
-		"id": 3,
+		"id": 2,
 		"title": "The Wizard of Oz",
 		"author": "L Frank Baum",
 		"cover_img": "https://res.cloudinary.com/unprinted/image/upload/v1592686823/unprinted-images/ex_book_3_j06t3n.png",
@@ -57,7 +57,7 @@
 		"price": "5.00"
 	},
 	{
-		"id": 4,
+		"id": 3,
 		"title": "Sherlock Holmes",
 		"author": "Sir Authur Conan Doyle",
 		"cover_img": "https://res.cloudinary.com/unprinted/image/upload/v1592686823/unprinted-images/ex_book_4_i3wqmj.jpg",
@@ -76,7 +76,7 @@
 		"price": "5.00"
 	},
 	{
-		"id": 5,
+		"id": 4,
 		"title": "Harry Potter and the Sorcerer's Stone",
 		"author": "J K Rowling",
 		"cover_img": "https://res.cloudinary.com/unprinted/image/upload/v1592686824/unprinted-images/ex_book_5_pnsoha.jpg",
@@ -95,7 +95,7 @@
 		"price": "5.00"
 	},
 	{
-		"id": 6,
+		"id": 5,
 		"title": "Moby Dick",
 		"author": "Herman Melville",
 		"cover_img": "https://res.cloudinary.com/unprinted/image/upload/v1592686823/unprinted-images/ex_book_6_agrqxq.png",

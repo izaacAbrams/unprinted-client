@@ -21,6 +21,10 @@ class App extends Component {
 		getCurrentBook: (book_id) => {
 			return this.state.library.find((book) => book.id === parseInt(book_id));
 		},
+		addSection: (newSection, book_id) => {
+			const current = this.state.getCurrentBook(book_id);
+			this.state.library[current.id].content.push(newSection);
+		},
 	};
 
 	componentDidMount() {
