@@ -1,18 +1,45 @@
 import React, { Component } from "react";
+import UnprintedContext from "../../context/UnprintedContext";
+import { v4 as uuidv4 } from "uuid";
 import "./NewBook.css";
 
 class NewBook extends Component {
+	static contextType = UnprintedContext;
+
 	state = {
+		id: uuidv4(),
 		title: "",
 		author: "",
 		summary: "",
-		cover_art: "",
+		cover_img: "",
 	};
 	handleSubmit(e) {
 		e.preventDefault();
+		const { id, title, author, summary, cover_img } = this.state;
+		const newBook = {
+			id,
+			title,
+			author,
+			summary,
+			cover_img,
+		};
+		this.context.addBook(newBook);
+		this.props.history.push("/book-list");
 	}
-	handleCoverArt(imageData) {
-		console.log(imageData);
+	handleTitle(e) {
+		this.setState({
+			title: e.target.value,
+		});
+	}
+	handleAuthor(e) {
+		this.setState({
+			author: e.target.value,
+		});
+	}
+	handleSummary(e) {
+		this.setState({
+			summary: e.target.value,
+		});
 	}
 	handleFile(e) {
 		const file = e.target.files[0];
@@ -21,24 +48,31 @@ class NewBook extends Component {
 		reader.readAsDataURL(file);
 		reader.onloadend = () => {
 			this.setState({
-				cover_art: reader.result,
+				cover_img: reader.result,
 			});
 		};
 	}
 	render() {
-		const image = this.state.cover_art ? (
-			<img src={this.state.cover_art} />
-		) : (
-			<></>
-		);
 		return (
 			<form onSubmit={(e) => this.handleSubmit(e)} className="NewBook">
 				<label htmlFor="NewBook__title">Title:</label>
-				<input type="text" id="NewBook__title" />
+				<input
+					type="text"
+					onChange={(e) => this.handleTitle(e)}
+					id="NewBook__title"
+				/>
 				<label htmlFor="NewBook__author">Author:</label>
-				<input type="text" id="NewBook__author" />
-				<label htmlFor="NewBook__summary">Description:</label>
-				<input type="text" id="NewBook__summary" />
+				<input
+					type="text"
+					onChange={(e) => this.handleAuthor(e)}
+					id="NewBook__author"
+				/>
+				<label htmlFor="NewBook__summary">Summary:</label>
+				<input
+					type="text"
+					onChange={(e) => this.handleSummary(e)}
+					id="NewBook__summary"
+				/>
 				<label htmlFor="NewBook__cover_art">Cover Art:</label>
 				<input
 					type="file"
