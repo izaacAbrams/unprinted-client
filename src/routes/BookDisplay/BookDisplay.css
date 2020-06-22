@@ -1,3 +1,7 @@
 .BookDisplay__img {
 	height: 300px;
 }
+
+.BookDisplay__book {
+	display: flex;
+}

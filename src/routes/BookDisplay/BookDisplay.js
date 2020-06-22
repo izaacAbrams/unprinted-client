@@ -19,12 +19,14 @@ class BookDisplay extends Component {
 					className="BookDisplay__img"
 					alt={`Cover for ${current.title}`}
 				/>
-				<h1>{current.title}</h1>
-				<h2>{current.author}</h2>
-				<p>{current.summary}</p>
-				{/* price for when backend is made to facilitate payments */}
-				{/* <p>${current.price}</p> */}
-				<Link to={`/read/${current.id}`}>Read</Link>
+				<div className="BookDisplay__info">
+					<h1>{current.title}</h1>
+					<h2>{current.author}</h2>
+					<p>{current.summary}</p>
+					{/* price for when backend is made to facilitate payments */}
+					{/* <p>${current.price}</p> */}
+					<Link to={`/read/${current.id}`}>Read</Link>
+				</div>
 			</div>
 		) : (
 			<></>

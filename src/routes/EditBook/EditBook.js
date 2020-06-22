@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import UnprintedContext from "../../context/UnprintedContext";
+import "./EditBook.css";
 
 class EditBook extends Component {
 	static contextType = UnprintedContext;
@@ -43,6 +44,7 @@ class EditBook extends Component {
 						)[0].content
 					}
 					onChange={(e) => this.handleText(e)}
+					className="EditBook__content"
 				/>
 			</div>
 		) : (

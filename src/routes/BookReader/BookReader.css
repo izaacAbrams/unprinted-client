@@ -1,0 +1,28 @@
+.BookReader__chapter {
+	margin: 50px;
+}
+
+.BookReader__chapter_content {
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.BookReader__btnGroup {
+	display: flex;
+	justify-content: center;
+}
+
+.BookReader__nextBtn {
+	display: block;
+	margin: 20px auto;
+}
+.BookReader__title {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.BookReader__title > img {
+	max-height: 500px;
+	max-width: 400px;
+}

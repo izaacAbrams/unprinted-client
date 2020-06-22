@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import UnprintedContext from "../../context/UnprintedContext";
 import BooksItem from "../../components/BooksItem/BooksItem";
+import "./CreatedBookList.css";
 
 class CreatedBookList extends Component {
 	static contextType = UnprintedContext;
@@ -20,6 +21,7 @@ class CreatedBookList extends Component {
 									<Link
 										key={book.id + content.section}
 										to={`/edit/${book.id}/${content.section}`}
+										className="CreatedBookList__links"
 									>
 										Chapter {content.section}
 									</Link>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import UnprintedContext from "../../context/UnprintedContext";
+import "./BookReader.css";
 
 class BookReader extends Component {
 	static contextType = UnprintedContext;
@@ -12,22 +13,57 @@ class BookReader extends Component {
 		e.preventDefault();
 		this.setState({ currentPage: this.state.currentPage + 1 });
 	}
+	handleBack(e) {
+		e.preventDefault();
+		this.setState({ currentPage: this.state.currentPage - 1 });
+	}
+	handleFinish(e) {
+		e.preventDefault();
+		this.props.history.push("/book-list");
+	}
 	renderPages(current) {
 		if (this.state.currentPage > 0) {
-			return current.content.map((section) => {
-				return (
-					<div className="BookReader__chapter">
-						<h1>Chapter {section.section}</h1>
-						<p>{section.content}</p>
-					</div>
-				);
-			});
+			return (
+				<div className="BookReader__chapter">
+					<h1>Chapter {current.content[this.state.currentPage - 1].section}</h1>
+					<p className="BookReader__chapter_content">
+						{current.content[this.state.currentPage - 1].content}
+					</p>
+				</div>
+			);
+		}
+	}
+	renderButtons(current) {
+		if (this.state.currentPage === 0) {
+			return (
+				<button
+					className="BookReader__nextBtn"
+					onClick={(e) => this.handleNext(e)}
+				>
+					Next
+				</button>
+			);
+		} else if (current.content[this.state.currentPage] === undefined) {
+			return (
+				<div className="BookReader__btnGroup">
+					<button onClick={(e) => this.handleBack(e)}>Back</button>
+					<button onClick={(e) => this.handleFinish(e)}>Finish</button>
+				</div>
+			);
+		} else {
+			return (
+				<div className="BookReader__btnGroup">
+					<button onClick={(e) => this.handleBack(e)}>Back</button>
+					<button onClick={(e) => this.handleNext(e)}>Next</button>
+				</div>
+			);
 		}
 	}
 	render() {
 		const currentBook = this.context.getCurrentBook(
 			this.props.match.params.book_id
 		);
+
 		const titlePage =
 			currentBook && this.state.currentPage === 0 ? (
 				<div className="BookReader__title">
@@ -45,7 +81,7 @@ class BookReader extends Component {
 			<div className="BookReader">
 				{titlePage}
 				{this.renderPages(currentBook)}
-				<button onClick={(e) => this.handleNext(e)}>Next</button>
+				{this.renderButtons(currentBook)}
 			</div>
 		);
 	}
