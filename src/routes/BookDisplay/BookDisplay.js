@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import UnprintedContext from "../../context/UnprintedContext";
 import "./BookDisplay.css";
 
@@ -21,7 +22,9 @@ class BookDisplay extends Component {
 				<h1>{current.title}</h1>
 				<h2>{current.author}</h2>
 				<p>{current.summary}</p>
-				<p>${current.price}</p>
+				{/* price for when backend is made to facilitate payments */}
+				{/* <p>${current.price}</p> */}
+				<Link to={`/read/${current.id}`}>Read</Link>
 			</div>
 		) : (
 			<></>

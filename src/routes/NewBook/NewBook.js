@@ -22,6 +22,7 @@ class NewBook extends Component {
 			author,
 			summary,
 			cover_img,
+			content: [],
 		};
 		this.context.addBook(newBook);
 		this.props.history.push("/book-list");

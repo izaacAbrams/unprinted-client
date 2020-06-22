@@ -13,15 +13,21 @@ class CreatedBookList extends Component {
 				{this.context.library.map((book) => (
 					<div key={book.title + book.id} className="CreatedBookList__book">
 						<BooksItem book={book} />
-						{book.content.map((content) => (
-							<Link
-								key={book.id + content.section}
-								to={`/edit/${book.id}/${content.section}`}
-							>
-								Section {content.section}
-							</Link>
-						))}
-						<Link to={`/${book.id}/add-section`}>Add Section</Link>
+						{book.content ? (
+							book.content
+								.sort((a, b) => parseInt(a.section) - parseInt(b.section))
+								.map((content) => (
+									<Link
+										key={book.id + content.section}
+										to={`/edit/${book.id}/${content.section}`}
+									>
+										Chapter {content.section}
+									</Link>
+								))
+						) : (
+							<></>
+						)}
+						<Link to={`/${book.id}/add-chapter`}>Add Chapter</Link>
 					</div>
 				))}
 			</div>

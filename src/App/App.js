@@ -9,7 +9,8 @@ import BookDisplay from "../routes/BookDisplay/BookDisplay";
 import UnprintedContext from "../context/UnprintedContext";
 import CreatedBooksList from "../routes/CreatedBookList/CreatedBookList";
 import EditBook from "../routes/EditBook/EditBook";
-import AddSection from "../routes/AddSection/AddSection";
+import AddChapter from "../routes/AddChapter/AddChapter";
+import BookReader from "../routes/BookReader/BookReader";
 import bookSeed from "../seeds/book_seeds.json";
 import "./App.css";
 
@@ -19,19 +20,29 @@ class App extends Component {
 	state = {
 		library: [],
 		getCurrentBook: (book_id) => {
-			return this.state.library.find((book) => book.id === parseInt(book_id));
+			return this.state.library.find((book) => book.id.toString() === book_id);
 		},
 		addBook: (book) => {
 			this.state.library.push(book);
 		},
 		addSection: (newSection, book_id) => {
 			const current = this.state.getCurrentBook(book_id);
-			this.state.library[current.id].content.push(newSection);
+			const currentIndex = this.state.library.indexOf(current);
+			this.state.library[currentIndex].content.push(newSection);
 		},
 		addImageData: (imageData) => {
 			this.setState({
 				image_data: imageData,
 			});
+		},
+		editChapter: (book_id, chapter, newChapter) => {
+			const current = this.state.getCurrentBook(book_id);
+			const currentIndex = this.state.library.indexOf(current);
+			const chapterIndex = this.state.library[currentIndex].content.findIndex(
+				(content) => content.section === parseInt(chapter)
+			);
+			this.state.library[currentIndex].content.splice(chapterIndex, 1);
+			this.state.library[currentIndex].content.push(newChapter);
 		},
 	};
 
@@ -55,7 +66,8 @@ class App extends Component {
 						<Route path={"/book/:book_id"} component={BookDisplay} />
 						<Route path={"/my-books"} component={CreatedBooksList} />
 						<Route path={"/edit/:book_id/:section"} component={EditBook} />
-						<Route path={"/:book_id/add-section"} component={AddSection} />
+						<Route path={"/:book_id/add-chapter"} component={AddChapter} />
+						<Route path={"/read/:book_id"} component={BookReader} />
 					</Switch>
 				</UnprintedContext.Provider>
 			</div>

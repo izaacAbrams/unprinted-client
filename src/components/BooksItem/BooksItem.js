@@ -9,7 +9,6 @@ class BooksItem extends Component {
 			) : (
 				<p>{this.props.book.title}</p>
 			);
-		console.log(this.props.book.title.split("").slice(0, 24).join(""));
 		return (
 			<div className="BooksItem">
 				<img
