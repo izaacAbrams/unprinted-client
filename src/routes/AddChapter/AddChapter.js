@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import UnprintedContext from "../../context/UnprintedContext";
 import MyEditor from "../../components/MyEditor/MyEditor";
+import "./AddChapter.css";
 
 class AddChapter extends Component {
 	static contextType = UnprintedContext;
@@ -18,7 +19,11 @@ class AddChapter extends Component {
 		return (
 			<div className="AddChapter">
 				<label htmlFor="AddChapter__chapter">Chapter:</label>
-				<input type="text" id="AddChapter__chapter" />
+				<input
+					type="text"
+					className="AddChapter__input"
+					id="AddChapter__chapter"
+				/>
 				<MyEditor handleSubmit={(content) => this.handleSubmit(content)} />
 			</div>
 		);

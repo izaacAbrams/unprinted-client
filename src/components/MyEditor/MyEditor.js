@@ -14,14 +14,12 @@ class MyEditor extends Component {
 	}
 	handleSubmit(e) {
 		e.preventDefault();
-		this.props.handleSubmit(this.state.text)
+		this.props.handleSubmit(this.state.text);
 	}
 
 	render() {
 		return (
-			<form
-				onSubmit={(e) => this.handleSubmit(e)}
-			>
+			<form className="MyEditor" onSubmit={(e) => this.handleSubmit(e)}>
 				<div
 					onKeyUp={(e) => this.handleText(e)}
 					className="MyEditor__textarea"

@@ -61,18 +61,21 @@ class NewBook extends Component {
 					type="text"
 					onChange={(e) => this.handleTitle(e)}
 					id="NewBook__title"
+					className="NewBook__input"
 				/>
 				<label htmlFor="NewBook__author">Author:</label>
 				<input
 					type="text"
 					onChange={(e) => this.handleAuthor(e)}
 					id="NewBook__author"
+					className="NewBook__input"
 				/>
 				<label htmlFor="NewBook__summary">Summary:</label>
 				<input
 					type="text"
 					onChange={(e) => this.handleSummary(e)}
 					id="NewBook__summary"
+					className="NewBook__input"
 				/>
 				<label htmlFor="NewBook__cover_art">Cover Art:</label>
 				<input
@@ -80,6 +83,7 @@ class NewBook extends Component {
 					accept="image/x-png,image/jpeg"
 					onChange={(e) => this.handleFile(e)}
 					id="NewBook__cover_art"
+					className="NewBook__input"
 				/>
 				<button type="submit">Submit</button>
 			</form>

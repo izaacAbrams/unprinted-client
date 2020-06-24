@@ -1,3 +1,7 @@
+.MyEditor {
+	margin: 30px;
+}
+
 .MyEditor__textarea {
 	border: 1px solid black;
 	width: 30%;
@@ -7,22 +11,16 @@
 	resize: both;
 }
 
-.MyEditor__toolbar {
-	display: flex;
-	width: 30%;
-	justify-content: space-evenly;
-	border: 1px solid black;
-}
-
-.MyEditor__option {
-	cursor: pointer;
-}
-
 .MyEditor__preview {
-	width: 20%;
+	width: 30%;
 	height: 200px;
 	border: 1px solid black;
+	padding: 5px;
 	word-wrap: break-word;
 	overflow: auto;
 	resize: both;
+}
+.MyEditor__preview > * {
+	margin: 0;
+	padding: 0;
 }
