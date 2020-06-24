@@ -11,6 +11,8 @@ import CreatedBooksList from "../routes/CreatedBookList/CreatedBookList";
 import EditBook from "../routes/EditBook/EditBook";
 import AddChapter from "../routes/AddChapter/AddChapter";
 import BookReader from "../routes/BookReader/BookReader";
+import LoginPage from "../routes/LoginPage/LoginPage";
+import PrivateRoute from "../services/PrivateRoute";
 import bookSeed from "../seeds/book_seeds.json";
 import "./App.css";
 
@@ -19,6 +21,9 @@ class App extends Component {
 
 	state = {
 		library: [],
+		updateSignedIn: (status) => {
+			this.setState({ isSignedIn: status });
+		},
 		getCurrentBook: (book_id) => {
 			return this.state.library.find((book) => book.id.toString() === book_id);
 		},
@@ -60,14 +65,21 @@ class App extends Component {
 				<UnprintedContext.Provider value={this.state}>
 					<Switch>
 						<Route exact path={"/"} component={LandingPage} />
+						<Route path={"/login"} component={LoginPage} />
 						<Route path={"/book-list"} component={BooksList} />
-						<Route path={"/new"} component={NewBook} />
-						<Route path={"/account"} component={Account} />
+						<PrivateRoute path={"/new"} component={NewBook} />
+						<PrivateRoute path={"/account"} component={Account} />
 						<Route path={"/book/:book_id"} component={BookDisplay} />
-						<Route path={"/my-books"} component={CreatedBooksList} />
-						<Route path={"/edit/:book_id/:section"} component={EditBook} />
-						<Route path={"/:book_id/add-chapter"} component={AddChapter} />
-						<Route path={"/read/:book_id"} component={BookReader} />
+						<PrivateRoute path={"/my-books"} component={CreatedBooksList} />
+						<PrivateRoute
+							path={"/edit/:book_id/:section"}
+							component={EditBook}
+						/>
+						<PrivateRoute
+							path={"/:book_id/add-chapter"}
+							component={AddChapter}
+						/>
+						<PrivateRoute path={"/read/:book_id"} component={BookReader} />
 					</Switch>
 				</UnprintedContext.Provider>
 			</div>

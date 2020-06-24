@@ -1,4 +1,11 @@
 .Nav {
-    display: flex;
-    justify-content: space-around;
+	display: flex;
+	justify-content: space-around;
+}
+
+.Nav__logout,
+.Nav__account,
+.Nav__register,
+.Nav__login {
+	padding: 0 20px;
 }

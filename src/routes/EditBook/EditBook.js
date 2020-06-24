@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import UnprintedContext from "../../context/UnprintedContext";
+import MyEditor from "../../components/MyEditor/MyEditor";
 import "./EditBook.css";
 
 class EditBook extends Component {
@@ -10,11 +11,10 @@ class EditBook extends Component {
 		content: "",
 	};
 
-	handleSubmit(e) {
-		e.preventDefault();
+	handleSubmit(content) {
 		const newChapter = {
 			section: parseInt(this.state.section),
-			content: this.state.content,
+			content: content,
 		};
 		const book_id = this.props.match.params.book_id;
 		const chapter = this.props.match.params.section;
@@ -36,26 +36,20 @@ class EditBook extends Component {
 		const bookSection = this.context.library[currentIndex] ? (
 			<div className="EditBook__section">
 				<h1>{currentBook.title}</h1>
-				<textarea
+				<MyEditor
+					handleSubmit={(e) => this.handleSubmit(e)}
 					defaultValue={
 						currentBook.content.filter(
 							(content) =>
 								content.section.toString() === this.props.match.params.section
 						)[0].content
 					}
-					onChange={(e) => this.handleText(e)}
-					className="EditBook__content"
 				/>
 			</div>
 		) : (
 			<></>
 		);
-		return (
-			<form onSubmit={(e) => this.handleSubmit(e)} className="EditBook">
-				{bookSection}
-				<button type="submit">Submit</button>
-			</form>
-		);
+		return <div className="EditBook">{bookSection}</div>;
 	}
 }
 

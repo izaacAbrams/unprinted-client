@@ -1,0 +1,28 @@
+.MyEditor__textarea {
+	border: 1px solid black;
+	width: 30%;
+	height: 200px;
+	padding: 5px;
+	overflow: auto;
+	resize: both;
+}
+
+.MyEditor__toolbar {
+	display: flex;
+	width: 30%;
+	justify-content: space-evenly;
+	border: 1px solid black;
+}
+
+.MyEditor__option {
+	cursor: pointer;
+}
+
+.MyEditor__preview {
+	width: 20%;
+	height: 200px;
+	border: 1px solid black;
+	word-wrap: break-word;
+	overflow: auto;
+	resize: both;
+}
