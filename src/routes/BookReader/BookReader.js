@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import UnprintedContext from "../../context/UnprintedContext";
+import ReactMarkdown from "react-markdown";
 import "./BookReader.css";
 
 class BookReader extends Component {
@@ -26,9 +27,10 @@ class BookReader extends Component {
 			return (
 				<div className="BookReader__chapter">
 					<h1>Chapter {current.content[this.state.currentPage - 1].section}</h1>
-					<p className="BookReader__chapter_content">
-						{current.content[this.state.currentPage - 1].content}
-					</p>
+					<ReactMarkdown
+						className="BookReader__chapter_content"
+						source={current.content[this.state.currentPage - 1].content}
+					/>
 				</div>
 			);
 		}
