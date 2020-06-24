@@ -12,6 +12,7 @@ import EditBook from "../routes/EditBook/EditBook";
 import AddChapter from "../routes/AddChapter/AddChapter";
 import BookReader from "../routes/BookReader/BookReader";
 import LoginPage from "../routes/LoginPage/LoginPage";
+import SignUpForm from "../routes/SignUpForm/SignUpForm";
 import PrivateRoute from "../services/PrivateRoute";
 import bookSeed from "../seeds/book_seeds.json";
 import "./App.css";
@@ -66,6 +67,7 @@ class App extends Component {
 					<Switch>
 						<Route exact path={"/"} component={LandingPage} />
 						<Route path={"/login"} component={LoginPage} />
+						<Route path={"/signup"} component={SignUpForm} />
 						<Route path={"/book-list"} component={BooksList} />
 						<PrivateRoute path={"/new"} component={NewBook} />
 						<PrivateRoute path={"/account"} component={Account} />
