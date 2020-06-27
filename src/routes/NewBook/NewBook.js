@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import UnprintedContext from "../../context/UnprintedContext";
 import { v4 as uuidv4 } from "uuid";
 import "./NewBook.css";
+import BookApiService from "../../services/book-api-services";
+import TokenService from "../../services/token-service";
 
 class NewBook extends Component {
 	static contextType = UnprintedContext;
@@ -12,10 +14,21 @@ class NewBook extends Component {
 		author: "",
 		summary: "",
 		cover_img: "",
+		price: "",
+		created_by: TokenService.readJwtToken().user_id,
+		error: null,
 	};
 	handleSubmit(e) {
 		e.preventDefault();
-		const { id, title, author, summary, cover_img } = this.state;
+		const {
+			id,
+			title,
+			author,
+			summary,
+			cover_img,
+			price,
+			created_by,
+		} = this.state;
 		const newBook = {
 			id,
 			title,
@@ -23,8 +36,11 @@ class NewBook extends Component {
 			summary,
 			cover_img,
 			content: [],
+			price,
+			created_by,
 		};
 		this.context.addBook(newBook);
+		BookApiService.postBook(newBook);
 		this.props.history.push("/book-list");
 	}
 	handleTitle(e) {
@@ -52,8 +68,32 @@ class NewBook extends Component {
 				cover_img: reader.result,
 			});
 		};
+		this.setState({
+			cover_img: file,
+		});
+	}
+	handlePrice(e) {
+		if (parseInt(e.target.value) >= 15) {
+			this.setState({
+				error: "Please enter a price between $1 - $15",
+			});
+		} else if (parseInt(e.target.value) > 0 && parseInt(e.target.value) <= 15) {
+			this.setState({
+				price: parseFloat(e.target.value),
+				error: null,
+			});
+		} else {
+			this.setState({
+				error: "Please enter a numeric price between $1 and $15",
+			});
+		}
 	}
 	render() {
+		const error = this.state.error ? (
+			<p className="error">{this.state.error}</p>
+		) : (
+			<></>
+		);
 		return (
 			<form onSubmit={(e) => this.handleSubmit(e)} className="NewBook">
 				<label htmlFor="NewBook__title">Title:</label>
@@ -85,7 +125,17 @@ class NewBook extends Component {
 					id="NewBook__cover_art"
 					className="NewBook__input"
 				/>
-				<button type="submit">Submit</button>
+				<label htmlFor="NewBook__price">Price:</label>
+				<input
+					type="text"
+					onChange={(e) => this.handlePrice(e)}
+					id="NewBook__price"
+					className="NewBook__input"
+				/>
+				<button type="submit" disabled={!!this.state.error}>
+					Submit
+				</button>
+				{error}
 			</form>
 		);
 	}

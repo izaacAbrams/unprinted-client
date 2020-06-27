@@ -20,18 +20,16 @@ class LoginForm extends Component {
 		AuthApiService.postLogin({
 			email: email.value,
 			password: password.value,
-		});
-		// .then((res) => {
-		// 	email.value = "";
-		// 	password.value = "";
-		// 	this.context.updateSignedIn(true);
-		// 	this.props.onLoginSuccess();
-		// })
-		// .catch((res) => {
-		// 	this.setState({ error: res.error });
-		// });
-		this.props.onLoginSuccess();
-		this.context.updateSignedIn(true);
+		})
+			.then((res) => {
+				email.value = "";
+				password.value = "";
+				this.context.updateSignedIn(true);
+				this.props.onLoginSuccess();
+			})
+			.catch((res) => {
+				this.setState({ error: res.error });
+			});
 	};
 	render() {
 		const { error } = this.state;

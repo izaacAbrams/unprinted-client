@@ -1,17 +1,32 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import UnprintedContext from "../../context/UnprintedContext";
+import BookApiService from "../../services/book-api-services";
 import BooksItem from "../../components/BooksItem/BooksItem";
 import "./CreatedBookList.css";
 
 class CreatedBookList extends Component {
 	static contextType = UnprintedContext;
+	state = {
+		library: [],
+	};
+
+	handleDelete(e, id) {
+		e.preventDefault();
+		this.context.removeBook(id);
+	}
+
+	componentDidMount() {
+		BookApiService.getCreatedLibrary().then((books) =>
+			this.context.addCreatedLibrary(books)
+		);
+	}
 
 	render() {
 		return (
 			<div className="CreatedBookList">
 				<h1>Your Books</h1>
-				{this.context.library.map((book) => (
+				{this.context.createdLibrary.map((book) => (
 					<div key={book.title + book.id} className="CreatedBookList__book">
 						<BooksItem book={book} />
 						{book.content ? (
@@ -30,6 +45,9 @@ class CreatedBookList extends Component {
 							<></>
 						)}
 						<Link to={`/${book.id}/add-chapter`}>Add Chapter</Link>
+						<button onClick={(e) => this.handleDelete(e, book.id)}>
+							Delete
+						</button>
 					</div>
 				))}
 			</div>

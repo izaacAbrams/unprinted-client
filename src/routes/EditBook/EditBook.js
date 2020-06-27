@@ -28,12 +28,13 @@ class EditBook extends Component {
 	}
 
 	render() {
-		const currentBook = this.context.getCurrentBook(
+		const currentBook = this.context.getCreatedBook(
 			this.props.match.params.book_id
 		);
 
-		const currentIndex = this.context.library.indexOf(currentBook);
-		const bookSection = this.context.library[currentIndex] ? (
+		const currentIndex = this.context.createdLibrary.indexOf(currentBook);
+		console.log(currentIndex);
+		const bookSection = this.context.createdLibrary[currentIndex] ? (
 			<div className="EditBook__section">
 				<h1>{currentBook.title}</h1>
 				<MyEditor
