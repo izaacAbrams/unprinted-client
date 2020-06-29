@@ -33,12 +33,15 @@ class App extends Component {
 		ownedLibrary: null,
 		updateSignedIn: (status) => {
 			if (status === true) {
-				BookApiService.getOwnedLibrary().then((books) =>
-					this.setState({ ownedLibrary: books })
-				);
-				BookApiService.getCreatedLibrary().then((books) =>
-					this.setState({ createdLibrary: books })
-				);
+				BookApiService.getOwnedLibrary().then((books) => {
+					if (books.length > 0 || !books.message)
+						this.setState({ ownedLibrary: books });
+				});
+				BookApiService.getCreatedLibrary().then((books) => {
+					if (books.length > 0 || !books.message) {
+						this.setState({ createdLibrary: books });
+					}
+				});
 			}
 		},
 		addCreatedLibrary: (books) => {
