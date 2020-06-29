@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Checkout from "../Checkout/Checkout";
 import UnprintedContext from "../../context/UnprintedContext";
 import "./BookDisplay.css";
-import TokenService from "../../services/token-service";
 
 class BookDisplay extends Component {
 	static contextType = UnprintedContext;
@@ -12,10 +11,14 @@ class BookDisplay extends Component {
 		const current = this.context.getCurrentBook(
 			this.props.match.params.book_id
 		);
-		const isOwned = !!this.context.ownedLibrary.find(
-			(book) => book.id === current.id
-		);
-
+		const isOwned =
+			!!this.context.ownedLibrary && !!current
+				? !!this.context.ownedLibrary.find((book) => book.id === current.id)
+				: false;
+		const isCreated =
+			!!this.context.createdLibrary && !!current
+				? !!this.context.createdLibrary.find((book) => book.id === current.id)
+				: false;
 		const current_book = this.context.getCurrentBook(
 			this.props.match.params.book_id
 		) ? (
@@ -29,7 +32,7 @@ class BookDisplay extends Component {
 					<h1>{current.title}</h1>
 					<h2>{current.author}</h2>
 					<p>{current.summary}</p>
-					{isOwned ? (
+					{isCreated || isOwned ? (
 						<Link to={`/read/${current.id}`}>Read</Link>
 					) : (
 						<Checkout
@@ -42,6 +45,7 @@ class BookDisplay extends Component {
 		) : (
 			<></>
 		);
+
 		return <div className="BookDisplay">{current_book}</div>;
 	}
 }

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import UnprintedContext from "../../context/UnprintedContext";
-import { v4 as uuidv4 } from "uuid";
 import "./NewBook.css";
 import BookApiService from "../../services/book-api-services";
 import TokenService from "../../services/token-service";
@@ -9,7 +8,6 @@ class NewBook extends Component {
 	static contextType = UnprintedContext;
 
 	state = {
-		id: uuidv4(),
 		title: "",
 		author: "",
 		summary: "",
@@ -20,17 +18,8 @@ class NewBook extends Component {
 	};
 	handleSubmit(e) {
 		e.preventDefault();
-		const {
-			id,
-			title,
-			author,
-			summary,
-			cover_img,
-			price,
-			created_by,
-		} = this.state;
+		const { title, author, summary, cover_img, price, created_by } = this.state;
 		const newBook = {
-			id,
 			title,
 			author,
 			summary,

@@ -14,8 +14,14 @@ import BookReader from "../routes/BookReader/BookReader";
 import LoginPage from "../routes/LoginPage/LoginPage";
 import Checkout from "../routes/Checkout/Checkout";
 import SignUpForm from "../routes/SignUpForm/SignUpForm";
+import AuthApiService from "../services/auth-api-service";
 import BookApiService from "../services/book-api-services";
+import TokenService from "../services/token-service";
+import IdleService from "../services/idle-service";
 import PrivateRoute from "../services/PrivateRoute";
+import Success from "../routes/Success/Success";
+import Failure from "../routes/Failure/Failure";
+import NotFound from "../routes/NotFound/NotFound";
 import "./App.css";
 
 class App extends Component {
@@ -23,10 +29,17 @@ class App extends Component {
 
 	state = {
 		library: [],
-		createdLibrary: [],
-		ownedLibrary: [],
+		createdLibrary: null,
+		ownedLibrary: null,
 		updateSignedIn: (status) => {
-			this.setState({ isSignedIn: status });
+			if (status === true) {
+				BookApiService.getOwnedLibrary().then((books) =>
+					this.setState({ ownedLibrary: books })
+				);
+				BookApiService.getCreatedLibrary().then((books) =>
+					this.setState({ createdLibrary: books })
+				);
+			}
 		},
 		addCreatedLibrary: (books) => {
 			this.setState({ createdLibrary: books });
@@ -37,6 +50,11 @@ class App extends Component {
 		getCurrentBook: (book_id) => {
 			return this.state.library.find((book) => book.id.toString() === book_id);
 		},
+		getOwnedBook: (book_id) => {
+			return this.state.ownedLibrary.find(
+				(book) => book.id.toString() === book_id
+			);
+		},
 		getCreatedBook: (book_id) => {
 			return this.state.createdLibrary.find(
 				(book) => book.id.toString() === book_id
@@ -46,9 +64,10 @@ class App extends Component {
 			this.state.library.push(book);
 		},
 		addSection: (newSection, book_id) => {
-			const current = this.state.getCurrentBook(book_id);
-			const currentIndex = this.state.library.indexOf(current);
-			this.state.library[currentIndex].content.push(newSection);
+			const current = this.state.getCreatedBook(book_id);
+			const currentIndex = this.state.createdLibrary.indexOf(current);
+			this.state.createdLibrary[currentIndex].content.push(newSection);
+			BookApiService.addChapter(current);
 		},
 		addImageData: (imageData) => {
 			this.setState({
@@ -76,13 +95,41 @@ class App extends Component {
 	};
 
 	componentDidMount() {
+		IdleService.setIdleCallback(this.logoutFromIdle);
+		if (TokenService.hasAuthToken()) {
+			IdleService.regiserIdleTimerResets();
+
+			TokenService.queueCallbackBeforeExpiry(() => {
+				AuthApiService.postRefreshToken();
+			});
+
+			BookApiService.getOwnedLibrary().then((books) => {
+				if (books.length > 0 || !books.message)
+					this.setState({ ownedLibrary: books });
+			});
+			BookApiService.getCreatedLibrary().then((books) => {
+				if (books.length > 0 || !books.message) {
+					this.setState({ createdLibrary: books });
+				}
+			});
+		}
+
 		BookApiService.getLibrary().then((books) =>
 			this.setState({ library: books })
 		);
-		BookApiService.getOwnedLibrary().then((books) =>
-			this.state.addOwnedLibrary(books)
-		);
 	}
+	componentWillUnmount() {
+		IdleService.unRegisterIdleResets();
+		TokenService.clearCallbackBeforeExpiry();
+	}
+
+	logoutFromIdle = () => {
+		TokenService.clearAuthToken();
+		TokenService.clearCallbackBeforeExpiry();
+		IdleService.unRegisterIdleResets();
+		this.forceUpdate();
+	};
+
 	render() {
 		const renderLibrary =
 			this.state.library.length > 0 ? <></> : <p>Loading</p>;
@@ -112,6 +159,9 @@ class App extends Component {
 							component={AddChapter}
 						/>
 						<PrivateRoute path={"/read/:book_id"} component={BookReader} />
+						<Route path={"/failure"} component={Failure} />
+						<PrivateRoute path={"/success"} component={Success} />
+						<Route component={NotFound} />
 					</Switch>
 				</UnprintedContext.Provider>
 			</div>

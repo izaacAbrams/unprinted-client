@@ -28,28 +28,41 @@ class EditBook extends Component {
 	}
 
 	render() {
-		const currentBook = this.context.getCreatedBook(
-			this.props.match.params.book_id
-		);
+		const currentBook =
+			this.context.createdLibrary !== null ? (
+				this.context.getCreatedBook(this.props.match.params.book_id)
+			) : (
+				<></>
+			);
 
-		const currentIndex = this.context.createdLibrary.indexOf(currentBook);
-		console.log(currentIndex);
-		const bookSection = this.context.createdLibrary[currentIndex] ? (
-			<div className="EditBook__section">
-				<h1>{currentBook.title}</h1>
-				<MyEditor
-					handleSubmit={(e) => this.handleSubmit(e)}
-					defaultValue={
-						currentBook.content.filter(
-							(content) =>
-								content.section.toString() === this.props.match.params.section
-						)[0].content
-					}
-				/>
-			</div>
-		) : (
-			<></>
-		);
+		const currentIndex =
+			this.context.createdLibrary !== null ? (
+				this.context.createdLibrary.indexOf(currentBook)
+			) : (
+				<></>
+			);
+		const bookSection =
+			this.context.createdLibrary !== null ? (
+				this.context.createdLibrary[currentIndex] ? (
+					<div className="EditBook__section">
+						<h1>{currentBook.title}</h1>
+						<MyEditor
+							handleSubmit={(e) => this.handleSubmit(e)}
+							defaultValue={
+								currentBook.content.filter(
+									(content) =>
+										content.section.toString() ===
+										this.props.match.params.section
+								)[0].content
+							}
+						/>
+					</div>
+				) : (
+					<></>
+				)
+			) : (
+				<></>
+			);
 		return <div className="EditBook">{bookSection}</div>;
 	}
 }

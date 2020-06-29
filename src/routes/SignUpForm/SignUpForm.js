@@ -14,16 +14,17 @@ class SignUpForm extends Component {
 			name: name.value,
 			email: email.value,
 			password: password.value,
-		});
-		//   .then((user) => {
-		//     name.value = "";
-		//     email.value = "";
-		//     password.value = "";
-		//     const { history } = this.props;
-		//     history.push("/login");
-		//   })
-		//   .catch((res) => this.setState({ error: res.error }));
-		this.props.history.push("/login");
+		})
+			.then((user) => {
+				if (user) {
+					name.value = "";
+					email.value = "";
+					password.value = "";
+					const { history } = this.props;
+					history.push("/login");
+				}
+			})
+			.catch((res) => this.setState({ error: res.error }));
 	}
 	render() {
 		const { error } = this.state;

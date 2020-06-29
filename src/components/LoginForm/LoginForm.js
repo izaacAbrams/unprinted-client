@@ -24,7 +24,9 @@ class LoginForm extends Component {
 			.then((res) => {
 				email.value = "";
 				password.value = "";
+
 				this.context.updateSignedIn(true);
+
 				this.props.onLoginSuccess();
 			})
 			.catch((res) => {

@@ -33,8 +33,6 @@ const AuthApiService = {
 				});
 				return res;
 			});
-		// TokenService.saveAuthToken(window.btoa(email + password));
-		// return window.btoa(email + password);
 	},
 	postRefreshToken() {
 		return fetch(`${config.API_ENDPOINT}/auth/refresh`, {

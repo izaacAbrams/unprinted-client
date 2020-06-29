@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import BookApiService from "../../services/book-api-services";
 import UnprintedContext from "../../context/UnprintedContext";
+import TokenService from "../../services/token-service";
+import config from "../../config";
 import "./Checkout.css";
 
-const stripePromise = loadStripe(
-	"pk_test_51Gxx6HLzmqWmrXIYQregZPlcSrO9fweI4joqvxBfwBzInr5Mk2ZQPuRYAT8qdpfFQBCPV6l2xGe42cEzSXUMc7dC00GQYIlzQm"
-);
+const stripePromise = loadStripe(config.STRIPE_PROMISE);
 
 class Checkout extends Component {
 	static contextType = UnprintedContext;
@@ -46,12 +46,22 @@ class Checkout extends Component {
 		) : (
 			<></>
 		);
+		const loginMessage = !TokenService.hasAuthToken() ? (
+			<p>Please sign up or log in to purchase</p>
+		) : (
+			<></>
+		);
 		return (
 			<form className="Checkout" onSubmit={this.handleSubmit}>
 				{error}
-				<button role="link" onClick={this.handleClick}>
+				<button
+					role="link"
+					disabled={!TokenService.hasAuthToken()}
+					onClick={this.handleClick}
+				>
 					${this.props.price}
 				</button>
+				{loginMessage}
 			</form>
 		);
 	}

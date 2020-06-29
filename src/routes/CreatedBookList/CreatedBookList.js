@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import UnprintedContext from "../../context/UnprintedContext";
-import BookApiService from "../../services/book-api-services";
 import BooksItem from "../../components/BooksItem/BooksItem";
 import "./CreatedBookList.css";
 
@@ -16,14 +15,8 @@ class CreatedBookList extends Component {
 		this.context.removeBook(id);
 	}
 
-	componentDidMount() {
-		BookApiService.getCreatedLibrary().then((books) =>
-			this.context.addCreatedLibrary(books)
-		);
-	}
-
 	render() {
-		return (
+		const bookList = this.context.createdLibrary ? (
 			<div className="CreatedBookList">
 				<h1>Your Books</h1>
 				{this.context.createdLibrary.map((book) => (
@@ -51,7 +44,10 @@ class CreatedBookList extends Component {
 					</div>
 				))}
 			</div>
+		) : (
+			<></>
 		);
+		return bookList;
 	}
 }
 

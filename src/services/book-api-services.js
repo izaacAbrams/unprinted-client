@@ -9,7 +9,6 @@ const BookApiService = {
 	},
 	getSession(book) {
 		const body = JSON.stringify(book);
-		console.log(body);
 		return fetch(`${config.API_ENDPOINT}/stripe/secret`, {
 			method: "POST",
 			headers: {
@@ -61,6 +60,16 @@ const BookApiService = {
 		);
 	},
 	updateBook(book) {
+		return fetch(`${config.API_ENDPOINT}/books/${book.id}`, {
+			method: "PATCH",
+			headers: {
+				authorization: `Bearer ${TokenService.getAuthToken()}`,
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(book),
+		});
+	},
+	addChapter(book) {
 		return fetch(`${config.API_ENDPOINT}/books/${book.id}`, {
 			method: "PATCH",
 			headers: {
