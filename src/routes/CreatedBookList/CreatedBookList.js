@@ -17,33 +17,45 @@ class CreatedBookList extends Component {
 
 	render() {
 		const bookList = this.context.createdLibrary ? (
-			<div className="CreatedBookList">
-				<h1>Your Books</h1>
-				{this.context.createdLibrary.map((book) => (
-					<div key={book.title + book.id} className="CreatedBookList__book">
-						<BooksItem book={book} />
-						{book.content ? (
-							book.content
-								.sort((a, b) => parseInt(a.section) - parseInt(b.section))
-								.map((content) => (
-									<Link
-										key={book.id + content.section}
-										to={`/edit/${book.id}/${content.section}`}
-										className="CreatedBookList__links"
-									>
-										Chapter {content.section}
-									</Link>
-								))
-						) : (
-							<></>
-						)}
-						<Link to={`/${book.id}/add-chapter`}>Add Chapter</Link>
-						<button onClick={(e) => this.handleDelete(e, book.id)}>
-							Delete
-						</button>
-					</div>
-				))}
-			</div>
+			<>
+				<h1 className="CreatedBookList__header">Your Books</h1>
+				<div className="CreatedBookList">
+					{this.context.createdLibrary.map((book) => (
+						<div key={book.title + book.id} className="CreatedBookList__book">
+							<BooksItem book={book} />
+							<div className="CreatedBookList__chapters">
+								{book.content ? (
+									book.content
+										.sort((a, b) => parseInt(a.section) - parseInt(b.section))
+										.map((content) => (
+											<Link
+												key={book.id + content.section}
+												to={`/edit/${book.id}/${content.section}`}
+												className="CreatedBookList__links"
+											>
+												Chapter {content.section}
+											</Link>
+										))
+								) : (
+									<></>
+								)}
+								<Link
+									to={`/${book.id}/add-chapter`}
+									className="CreatedBookList__links"
+								>
+									Add Chapter
+								</Link>
+								<button
+									className="CreatedBookList__delete"
+									onClick={(e) => this.handleDelete(e, book.id)}
+								>
+									Delete
+								</button>
+							</div>
+						</div>
+					))}
+				</div>
+			</>
 		) : (
 			<></>
 		);

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import LandingPage from "../routes/LandingPage/LandingPage";
 import Nav from "../components/Nav/Nav";
 import BooksList from "../routes/BooksList/BooksList";
@@ -29,8 +30,10 @@ class App extends Component {
 
 	state = {
 		library: [],
+		searchResults: [],
 		createdLibrary: null,
 		ownedLibrary: null,
+		signedIn: null,
 		stripeConnected: false,
 		updateStripeConnected: (status) => {
 			this.setState({ stripeConnected: status });
@@ -47,6 +50,20 @@ class App extends Component {
 					}
 				});
 			}
+			this.setState({ signedIn: true });
+		},
+		searchLibrary: (search) => {
+			const searchResults = this.state.library.filter((book) => {
+				if (search == null) {
+					return book;
+				} else if (book.title.toLowerCase().includes(search.toLowerCase())) {
+					return book;
+				}
+				return null;
+			});
+			this.setState({
+				searchResults,
+			});
 		},
 		addCreatedLibrary: (books) => {
 			this.setState({ createdLibrary: books });
@@ -68,12 +85,22 @@ class App extends Component {
 			);
 		},
 		addBook: (book) => {
-			this.state.library.push(book);
+			if (!book.id) {
+				book = {
+					...book,
+					id: uuidv4(),
+				};
+				this.state.library.push(book);
+			} else {
+				this.state.library.push(book);
+			}
 		},
 		addSection: (newSection, book_id) => {
 			const current = this.state.getCreatedBook(book_id);
 			const currentIndex = this.state.createdLibrary.indexOf(current);
-			this.state.createdLibrary[currentIndex].content.push(newSection);
+			this.state.createdLibrary[currentIndex].content === null
+				? (this.state.createdLibrary[currentIndex].content = newSection)
+				: this.state.createdLibrary[currentIndex].content.push(newSection);
 			BookApiService.addChapter(current);
 		},
 		addImageData: (imageData) => {

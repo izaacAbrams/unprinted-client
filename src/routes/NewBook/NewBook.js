@@ -85,43 +85,59 @@ class NewBook extends Component {
 		);
 		return (
 			<form onSubmit={(e) => this.handleSubmit(e)} className="NewBook">
-				<label htmlFor="NewBook__title">Title:</label>
+				<label className="NewBook__label" htmlFor="NewBook__title">
+					Title:
+				</label>
 				<input
 					type="text"
 					onChange={(e) => this.handleTitle(e)}
 					id="NewBook__title"
 					className="NewBook__input"
 				/>
-				<label htmlFor="NewBook__author">Author:</label>
+				<label className="NewBook__label" htmlFor="NewBook__author">
+					Author:
+				</label>
 				<input
 					type="text"
 					onChange={(e) => this.handleAuthor(e)}
 					id="NewBook__author"
 					className="NewBook__input"
 				/>
-				<label htmlFor="NewBook__summary">Summary:</label>
+				<label className="NewBook__label" htmlFor="NewBook__summary">
+					Summary:
+				</label>
 				<input
 					type="text"
 					onChange={(e) => this.handleSummary(e)}
 					id="NewBook__summary"
 					className="NewBook__input"
 				/>
-				<label htmlFor="NewBook__cover_art">Cover Art:</label>
+				<label className="NewBook__label" htmlFor="NewBook__cover_art">
+					Cover Art:
+				</label>
 				<input
 					type="file"
 					accept="image/x-png,image/jpeg"
 					onChange={(e) => this.handleFile(e)}
 					id="NewBook__cover_art"
-					className="NewBook__input"
+					className="NewBook__file"
 				/>
-				<label htmlFor="NewBook__price">Price:</label>
+				<label className="NewBook__label" htmlFor="NewBook__price">
+					Price:
+				</label>
 				<input
 					type="text"
 					onChange={(e) => this.handlePrice(e)}
 					id="NewBook__price"
 					className="NewBook__input"
 				/>
-				<button type="submit" disabled={!!this.state.error}>
+				<button
+					type="submit"
+					className="NewBook__submit"
+					disabled={
+						!!this.state.error || !this.state.title || !this.state.summary
+					}
+				>
 					Submit
 				</button>
 				{error}

@@ -3,3 +3,22 @@
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
+
+.BooksList__search {
+	text-align: center;
+}
+
+.BooksList__input {
+	width: 30%;
+	font-size: 16px;
+	padding: 5px 10px;
+	margin: 15px;
+	border-radius: 15px;
+	border: 1px solid #1c1f22;
+}
+
+.BooksList__empty {
+	text-align: center;
+	font-size: 24px;
+	font-family: "EB Garamond", serif;
+}

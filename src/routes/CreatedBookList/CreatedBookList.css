@@ -1,0 +1,47 @@
+.CreatedBookList {
+	padding: 20px 50px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.CreatedBookList__header {
+	font-family: "EB Garamond", serif;
+	margin: 20px 15%;
+	border-bottom: 1px solid #1c1f22;
+}
+
+.CreatedBookList__chapters {
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+	padding: 10px;
+}
+
+.CreatedBookList__links {
+	font-family: "Montserrat", sans-serif;
+	text-decoration: none;
+	color: #1c1f22;
+}
+
+.CreatedBookList__links:hover {
+	text-decoration: underline;
+}
+
+.CreatedBookList__book {
+	margin: 15px;
+	padding: 10px;
+	background-color: #efefe0;
+	border-radius: 5px;
+}
+
+.CreatedBookList__delete {
+	margin: 10px;
+	border-radius: 10px;
+	border: 1px solid #1c1f22;
+	background: none;
+}
+
+.CreatedBookList__delete:hover {
+	border-color: #ee6f2f;
+	color: #ee6f2f;
+}

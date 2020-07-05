@@ -4,23 +4,49 @@
 
 .MyEditor__textarea {
 	border: 1px solid black;
-	width: 30%;
+	width: 50%;
 	height: 200px;
 	padding: 5px;
 	overflow: auto;
 	resize: both;
+	font-family: "Montserrat", sans-serif;
 }
 
 .MyEditor__preview {
-	width: 30%;
+	width: 50%;
 	height: 200px;
 	border: 1px solid black;
 	padding: 5px;
 	word-wrap: break-word;
 	overflow: auto;
 	resize: both;
+	font-family: "Montserrat", sans-serif;
 }
 .MyEditor__preview > * {
 	margin: 0;
 	padding: 0;
+}
+
+.MyEditor__preview_header {
+	font-family: "EB Garamond", serif;
+	font-size: 18px;
+}
+
+.MyEditor__submit {
+	font-size: 18px;
+	font-family: "EB Garamond", serif;
+	background-color: #efefe0;
+	border: 1px solid #1c1f22;
+	border-radius: 5px;
+	padding: 5px 20px;
+	margin-left: 20%;
+}
+
+.MyEditor__submit:hover {
+	background-color: #f4d35e;
+}
+
+.MyEditor__p {
+	font-family: "Montserrat", sans-serif;
+	font-size: 14px;
 }

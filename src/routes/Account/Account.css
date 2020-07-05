@@ -1,5 +1,19 @@
 .Account {
 	display: flex;
 	flex-direction: column;
-	margin: 50px;
+	background-color: #efefe0;
+	padding: 3%;
+}
+
+.Account__link {
+	font-family: "EB Garamond", serif;
+	font-size: 22px;
+	text-decoration: none;
+	padding: 10px;
+	margin: 15px;
+	/* border: 2px solid #1c1f22; */
+}
+
+.Account__link:hover {
+	border-bottom: 1px solid #1c1f22;
 }

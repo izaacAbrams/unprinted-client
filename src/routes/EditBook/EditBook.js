@@ -45,7 +45,7 @@ class EditBook extends Component {
 			this.context.createdLibrary !== null ? (
 				this.context.createdLibrary[currentIndex] ? (
 					<div className="EditBook__section">
-						<h1>{currentBook.title}</h1>
+						<h1 className="EditBook__title">{currentBook.title}</h1>
 						<MyEditor
 							handleSubmit={(e) => this.handleSubmit(e)}
 							defaultValue={

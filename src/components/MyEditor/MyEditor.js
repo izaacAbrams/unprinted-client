@@ -28,15 +28,17 @@ class MyEditor extends Component {
 				>
 					{this.props.defaultValue}
 				</div>
-				<p>Preview:</p>
+				<p className="MyEditor__preview_header">Preview:</p>
 				<ReactMarkdown className="MyEditor__preview" source={this.state.text} />
-				<p>
+				<p className="MyEditor__p">
 					This editor supports markdown, for a general cheatsheet check out{" "}
 					<a href="https://commonmark.org/help/" target="#blank">
 						this link.
 					</a>
 				</p>
-				<button type="submit">Submit</button>
+				<button className="MyEditor__submit" type="submit">
+					Submit
+				</button>
 			</form>
 		);
 	}
