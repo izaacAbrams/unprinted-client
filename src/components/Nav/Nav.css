@@ -1,6 +1,9 @@
 .Nav {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #1c1f22;
+	padding: 10px 0;
 }
 
 .Nav__logout,
@@ -8,4 +11,25 @@
 .Nav__register,
 .Nav__login {
 	padding: 0 20px;
+}
+
+.Nav__logo_img {
+	width: 50px;
+	padding: 0 20px;
+}
+
+.Nav__logo {
+	display: flex;
+	align-items: center;
+}
+
+.Nav__link {
+	font-family: "EB Garamond", serif;
+	font-weight: 500;
+	color: #d6d6d6;
+	text-decoration: none;
+}
+
+.Nav__link:hover {
+	color: #f4d35e;
 }

@@ -56,6 +56,7 @@ class Checkout extends Component {
 				{error}
 				<button
 					role="link"
+					className="Checkout__btn"
 					disabled={!TokenService.hasAuthToken()}
 					onClick={this.handleClick}
 				>

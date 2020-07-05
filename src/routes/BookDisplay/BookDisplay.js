@@ -33,7 +33,9 @@ class BookDisplay extends Component {
 					<h2>{current.author}</h2>
 					<p>{current.summary}</p>
 					{isCreated || isOwned ? (
-						<Link to={`/read/${current.id}`}>Read</Link>
+						<Link to={`/read/${current.id}`} className="BookDisplay__btn">
+							Read
+						</Link>
 					) : (
 						<Checkout
 							current={this.props.match.params.book_id}

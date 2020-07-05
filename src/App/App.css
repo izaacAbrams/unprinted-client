@@ -1,0 +1,11 @@
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: #f4d35e;
+}
+
+.red {
+	font-size: 16px;
+	color: red;
+}

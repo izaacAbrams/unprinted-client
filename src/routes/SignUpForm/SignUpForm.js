@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AuthApiService from "../../services/auth-api-service";
+import "./SignUpForm.css";
 
 class SignUpForm extends Component {
 	state = {
@@ -83,7 +84,9 @@ class SignUpForm extends Component {
 							/>
 						</div>
 
-						<button type="submit">Submit</button>
+						<button className="SignUpForm__submit" type="submit">
+							Submit
+						</button>
 					</form>
 				</main>
 			</div>

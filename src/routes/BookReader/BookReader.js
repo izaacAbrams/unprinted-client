@@ -26,7 +26,9 @@ class BookReader extends Component {
 		if (this.state.currentPage > 0) {
 			return (
 				<div className="BookReader__chapter">
-					<h1>Chapter {current.content[this.state.currentPage - 1].section}</h1>
+					<h1 className="BookReader__chapter_heading">
+						Chapter {current.content[this.state.currentPage - 1].section}
+					</h1>
 					<ReactMarkdown
 						className="BookReader__chapter_content"
 						source={current.content[this.state.currentPage - 1].content}
@@ -48,15 +50,35 @@ class BookReader extends Component {
 		} else if (current.content[this.state.currentPage] === undefined) {
 			return (
 				<div className="BookReader__btnGroup">
-					<button onClick={(e) => this.handleBack(e)}>Back</button>
-					<button onClick={(e) => this.handleFinish(e)}>Finish</button>
+					<button
+						className="BookReader__btnLeft"
+						onClick={(e) => this.handleBack(e)}
+					>
+						&#8249;
+					</button>
+					<button
+						className="BookReader__btnFinish"
+						onClick={(e) => this.handleFinish(e)}
+					>
+						Finish
+					</button>
 				</div>
 			);
 		} else {
 			return (
 				<div className="BookReader__btnGroup">
-					<button onClick={(e) => this.handleBack(e)}>Back</button>
-					<button onClick={(e) => this.handleNext(e)}>Next</button>
+					<button
+						className="BookReader__btnLeft"
+						onClick={(e) => this.handleBack(e)}
+					>
+						&#8249;
+					</button>
+					<button
+						className="BookReader__btnRight"
+						onClick={(e) => this.handleNext(e)}
+					>
+						&#8250;
+					</button>
 				</div>
 			);
 		}
@@ -74,8 +96,8 @@ class BookReader extends Component {
 		const titlePage =
 			currentBook && this.state.currentPage === 0 ? (
 				<div className="BookReader__title">
-					<h1>{currentBook.title}</h1>
-					<p>{currentBook.author}</p>
+					<h1 className="BookReader__heading">{currentBook.title}</h1>
+					<p className="BookReader__author">{currentBook.author}</p>
 					<img
 						src={currentBook.cover_img}
 						alt={`Cover for ${currentBook.title}`}
@@ -88,8 +110,8 @@ class BookReader extends Component {
 		return (
 			<div className="BookReader">
 				{titlePage}
-				{this.renderPages(currentBook)}
 				{this.renderButtons(currentBook)}
+				{this.renderPages(currentBook)}
 			</div>
 		);
 	}

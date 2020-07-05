@@ -38,31 +38,35 @@ class LoginForm extends Component {
 		return (
 			<div className="LoginForm">
 				<section className="LoginForm__main_section">
-					<form id="login" onSubmit={this.handleSubmitJwtAuth}>
+					<form
+						id="login"
+						className="LoginForm__form"
+						onSubmit={this.handleSubmitJwtAuth}
+					>
 						<div role="alert">{error && <p className="red">{error}</p>}</div>
 						<div className="LoginForm__section">
-							<label htmlFor="email" className="input_label">
+							<label htmlFor="email" className="LoginForm__label">
 								Email:
 							</label>
 							<input
 								type="text"
-								className="LoginForm__email"
+								className="LoginForm__input"
 								name="email"
 								required
 							/>
 						</div>
 						<div className="LoginForm__section">
-							<label htmlFor="password" className="input_label">
+							<label htmlFor="password" className="LoginForm__label">
 								Password:
 							</label>
 							<input
 								type="password"
 								name="password"
-								className="LoginForm__password"
+								className="LoginForm__input"
 								required
 							/>
 						</div>
-						<button className="submit_btn" type="submit">
+						<button className="LoginForm__submit" type="submit">
 							Submit
 						</button>
 					</form>

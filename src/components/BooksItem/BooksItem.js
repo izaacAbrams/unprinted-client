@@ -5,9 +5,11 @@ class BooksItem extends Component {
 	render() {
 		const bookTitle =
 			this.props.book.title.length > 24 ? (
-				<p>{this.props.book.title.split("").slice(0, 22).join("")}...</p>
+				<p className="BooksItem__title">
+					{this.props.book.title.split("").slice(0, 22).join("")}...
+				</p>
 			) : (
-				<p>{this.props.book.title}</p>
+				<p className="BooksItem__title">{this.props.book.title}</p>
 			);
 		return (
 			<div className="BooksItem">
@@ -16,7 +18,7 @@ class BooksItem extends Component {
 					alt="Cover Art"
 					className="BooksItem__cover"
 				/>
-				{bookTitle}
+				<div className="BooksItem__title_container">{bookTitle}</div>
 			</div>
 		);
 	}

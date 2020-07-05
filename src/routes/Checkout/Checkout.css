@@ -1,6 +1,15 @@
-.Checkout__input {
-	padding: 15px;
-	border: 1px solid black;
-	width: 60%;
-	margin: auto;
+.Checkout__btn {
+	font-family: "EB Garamond", serif;
+	font-size: 16px;
+	padding: 5px 20px;
+	border-radius: 10px;
+	border: 1px solid #1c1f22;
+}
+
+.Checkout__btn:disabled {
+	border: 1px solid lightgray;
+}
+
+.Checkout__btn:hover:enabled {
+	border-color: #f4d35e;
 }
