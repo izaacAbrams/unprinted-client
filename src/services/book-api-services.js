@@ -19,6 +19,16 @@ const BookApiService = {
 			!res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
 		);
 	},
+	hasStripeConnection(user_id) {
+		return fetch(`${config.API_ENDPOINT}/stripe?user=${user_id}`, {
+			method: "GET",
+			headers: {
+				authorization: `Bearer ${TokenService.getAuthToken()}`,
+			},
+		}).then((res) =>
+			!res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+		);
+	},
 	getLibrary() {
 		return fetch(`${config.API_ENDPOINT}/books`).then((res) =>
 			!res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()

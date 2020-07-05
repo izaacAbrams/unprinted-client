@@ -31,6 +31,10 @@ class App extends Component {
 		library: [],
 		createdLibrary: null,
 		ownedLibrary: null,
+		stripeConnected: false,
+		updateStripeConnected: (status) => {
+			this.setState({ stripeConnected: status });
+		},
 		updateSignedIn: (status) => {
 			if (status === true) {
 				BookApiService.getOwnedLibrary().then((books) => {
