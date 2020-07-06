@@ -38,6 +38,12 @@ body {
 	.SignUpForm__input {
 		padding: 5px;
 	}
+	.LoginForm__label {
+		font-size: 24px;
+	}
+	.LoginForm__input {
+		font-size: 16px;
+	}
 	.LandingPage {
 		padding-right: 10%;
 	}

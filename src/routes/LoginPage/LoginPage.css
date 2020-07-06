@@ -13,14 +13,12 @@
 
 .LoginForm__label {
 	font-family: "EB Garamond", serif;
-	/* font-size: 24px; */
 	font-size: 16px;
 }
 
 .LoginForm__input {
 	padding: 5px;
 	margin: 10px;
-	/* font-size: 16px; */
 	font-size: 14px;
 }
 
