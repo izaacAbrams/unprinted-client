@@ -23,6 +23,7 @@ import PrivateRoute from "../services/PrivateRoute";
 import Success from "../routes/Success/Success";
 import Failure from "../routes/Failure/Failure";
 import NotFound from "../routes/NotFound/NotFound";
+import loading from "../images/4V0b.gif";
 import "./App.css";
 
 class App extends Component {
@@ -169,7 +170,11 @@ class App extends Component {
 
 	render() {
 		const renderLibrary =
-			this.state.library.length > 0 ? <></> : <p>Loading</p>;
+			this.state.library.length > 0 ? (
+				<></>
+			) : (
+				<img src={loading} className="App__loading" alt="Loading" />
+			);
 		return (
 			<div className="App">
 				<header className="App-header">

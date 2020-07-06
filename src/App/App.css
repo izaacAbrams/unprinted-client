@@ -10,7 +10,17 @@ body {
 	color: red;
 }
 
+.App__loading {
+	width: 100px;
+	position: absolute;
+	top: 30%;
+	left: 30%;
+}
+
 @media screen and (min-width: 600px) {
+	.App__loading {
+		left: 50%;
+	}
 	.BookDisplay__book {
 		margin: 50px;
 		flex-direction: row;
