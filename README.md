@@ -1,68 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Timespace
 
-## Available Scripts
+[Live Link](https://unprinted-client.vercel.app/)
 
-In the project directory, you can run:
+## API Endpoints:
 
-### `npm start`
+- ### /books
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  - GET all books. Returns all books with no content for displaying in library.
+  - POST requires authentication. Posts new book to database.
+  - /owned/:user GET requires auth. Returns book with content that user owns.
+  - /created/:user GET requires auth. Returns book with content that user has created.
+  - /:book_id DELETE, PATCH and POST a book. Requires auth.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- ### /auth
 
-### `npm test`
+  - /auth/login POST Given correct login creds, will create JWT and return the created token.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ### /users
 
-### `npm run build`
+  - POST given that the email has not been taken, will create user.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ### /stripe
+- POST creates a stripe session for the checkout.
+- /webhook POST listens for events to redirect when checkout is complete.
+- /secret POST creates a stripe session for user to create an account.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Summary
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Unprinted is a crowdsourced, early access book library that gives the reader content more frequently than a traditional publisher. By doing this, the author can release only a chapter of the book at a time, and the reader does not have to wait roughly a year between publishings. The reader is able to view each book, and if interested in buying one can purchase and then begin reading it in the app.
 
-### `npm run eject`
+## Screenshots
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<img src="https://github.com/izaacAbrams/timespaces-app/blob/master/src/images/LandingPage.PNG" alt="Login Page" width="500"/>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The landing page, where you can demo creating a new appointment, or sign up.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<img src="https://github.com/izaacAbrams/timespaces-app/blob/master/src/images/LoginPage.PNG" alt="Login Page" width="500"/>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<img src="https://github.com/izaacAbrams/timespaces-app/blob/master/src/images/Appointments.PNG" alt="Login Page" width="500"/>
 
-## Learn More
+An example of a schedule with multiple appointments for the day.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img src="https://github.com/izaacAbrams/timespaces-app/blob/master/src/images/Schedules.PNG" alt="Login Page" width="500"/>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+An example of a users view with multiple schedules.
 
-### Code Splitting
+## Tech Used
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+React, Redux/Router, Momentjs, JWT, node.js, Express, PostgreSQL, Javascript ES6, HTML, CSS
