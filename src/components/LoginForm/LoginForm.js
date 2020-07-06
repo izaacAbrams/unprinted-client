@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import AuthApiService from "../../services/auth-api-service";
 import UnprintedContext from "../../context/UnprintedContext";
-// import "./LoginForm.css";
 
 class LoginForm extends Component {
 	static contextType = UnprintedContext;
@@ -30,7 +29,7 @@ class LoginForm extends Component {
 				this.props.onLoginSuccess();
 			})
 			.catch((res) => {
-				this.setState({ error: res.error });
+				this.setState({ error: res.error.message });
 			});
 	};
 	render() {
