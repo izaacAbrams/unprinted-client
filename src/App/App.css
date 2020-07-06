@@ -57,6 +57,9 @@ body {
 	.LandingPage {
 		padding-right: 10%;
 	}
+	.LandingPage__p {
+		font-size: 16px;
+	}
 	.BookReader__btnLeft {
 		padding: 50px;
 	}

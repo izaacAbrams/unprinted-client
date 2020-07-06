@@ -16,6 +16,7 @@
 
 .LandingPage__p {
 	font-family: "Montserrat", sans-serif;
+	font-size: 14px;
 	border-radius: 10px;
 	background-color: rgba(239, 239, 224, 0.8);
 	padding: 20px;
