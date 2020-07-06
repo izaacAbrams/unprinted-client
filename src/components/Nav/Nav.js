@@ -50,8 +50,8 @@ class Nav extends Component {
 		return (
 			<div className="Nav">
 				<div className="Nav__logo">
-					<img src={logo} className="Nav__logo_img" alt="Unprinted Logo" />
-					<Link to="/" className="Nav__link">
+					<Link to="/" className="Nav__link Nav__link_logo">
+						<img src={logo} className="Nav__logo_img" alt="Unprinted Logo" />
 						Unprinted
 					</Link>
 				</div>

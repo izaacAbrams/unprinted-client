@@ -9,3 +9,82 @@ body {
 	font-size: 16px;
 	color: red;
 }
+
+@media screen and (min-width: 600px) {
+	.BookDisplay__book {
+		margin: 50px;
+		flex-direction: row;
+	}
+	.BooksList__button {
+		padding: 5px 15px;
+		font-size: 16px;
+	}
+	.BooksList__input {
+		width: 30%;
+	}
+	.BooksItem__cover {
+		width: 200px;
+		height: 300px;
+	}
+	.BooksItem__title_container {
+		width: 200px;
+	}
+	.SignUpForm__submit {
+		padding: 5px 10px;
+	}
+	.SignUpForm__label {
+		font-size: 24px;
+	}
+	.SignUpForm__input {
+		padding: 5px;
+	}
+	.LandingPage {
+		padding-right: 10%;
+	}
+	.BookReader__btnLeft {
+		padding: 50px;
+	}
+	.BookReader__btnRight {
+		padding: 50px;
+	}
+	.BookReader__btnFinish {
+		padding: 50px;
+		font-size: 18px;
+	}
+	.Nav__logo_img {
+		width: 50px;
+	}
+	.Nav {
+		font-size: 16px;
+		padding: 15px 0;
+	}
+	.NewBook {
+		padding-left: 40%;
+	}
+	.NewBook__input {
+		width: 40%;
+	}
+	.NewBook__label {
+		font-size: 24px;
+	}
+}
+
+@media screen and (max-width: 330px) {
+	.Nav__link {
+		font-size: 8px;
+	}
+	.Nav {
+		padding: 3px;
+	}
+	.Nav__logo_img {
+		width: 10px;
+	}
+	.SignUpForm__section,
+	.LoginForm__section {
+		display: flex;
+		flex-direction: column;
+	}
+	.Account__link {
+		font-size: 16px;
+	}
+}

@@ -11,15 +11,15 @@
 }
 
 .BooksItem__cover {
-	width: 200px;
-	height: 300px;
+	width: 100px;
+	height: 150px;
 	border-radius: 5px;
 }
 
 .BooksItem__title_container {
 	position: absolute;
 	bottom: 0;
-	width: 200px;
+	width: 100px;
 	border-radius: 5px;
 	background-color: rgba(28, 31, 34, 0.7);
 }

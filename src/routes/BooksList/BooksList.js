@@ -21,15 +21,47 @@ class BooksList extends Component {
 		this.setState({ searched: true });
 	}
 
+	handleOwned(e) {
+		e.preventDefault();
+		this.context.addOwned();
+	}
+
+	handleClear(e) {
+		e.preventDefault();
+		this.setState({
+			searched: false,
+		});
+		this.context.searchLibrary();
+		document.querySelector(".searchbar").value = "";
+	}
+
 	render() {
 		return (
 			<>
 				<div className="BooksList__search">
 					<input
 						type="text"
-						className="BooksList__input"
+						placeholder="Search"
+						id="BooksList__search"
+						className="BooksList__input searchbar"
 						onChange={(e) => this.handleSearch(e)}
 					/>
+					{this.context.ownedLibrary !== null ? (
+						<button
+							className="BooksList__button"
+							onClick={(e) => this.handleOwned(e)}
+						>
+							My Books
+						</button>
+					) : (
+						<></>
+					)}
+					<button
+						className="BooksList__button"
+						onClick={(e) => this.handleClear(e)}
+					>
+						Clear
+					</button>
 				</div>
 				{this.state.searched && this.context.searchResults.length === 0 ? (
 					<p className="BooksList__empty">Sorry, no books found.</p>

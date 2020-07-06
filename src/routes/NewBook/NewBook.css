@@ -3,14 +3,14 @@
 	flex-direction: column;
 	align-items: baseline;
 	background-color: #efefe0;
-	height: calc(100vh - 120px);
+	height: calc(100vh - 100px);
 	padding-top: 50px;
-	padding-left: 40%;
+	padding-left: 50px;
 }
 
 .NewBook__input {
-	width: 30%;
-	font-size: 16px;
+	width: 50%;
+	font-size: 14px;
 	padding: 5px;
 	margin: 10px;
 	border-radius: 5px;
@@ -19,12 +19,11 @@
 
 .NewBook__label {
 	font-family: "EB Garamond", serif;
-	font-size: 24px;
+	font-size: 16px;
 }
 
 .NewBook__file {
 	width: 30%;
-	font-size: 16px;
 	padding: 5px;
 	margin: 10px;
 }

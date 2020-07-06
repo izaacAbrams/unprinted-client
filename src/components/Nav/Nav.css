@@ -4,6 +4,7 @@
 	align-items: center;
 	background-color: #1c1f22;
 	padding: 10px 0;
+	font-size: 12px;
 }
 
 .Nav__logout,
@@ -14,7 +15,7 @@
 }
 
 .Nav__logo_img {
-	width: 50px;
+	width: 30px;
 	padding: 0 20px;
 }
 
@@ -32,4 +33,9 @@
 
 .Nav__link:hover {
 	color: #f4d35e;
+}
+
+.Nav__link_logo {
+	display: flex;
+	align-items: center;
 }

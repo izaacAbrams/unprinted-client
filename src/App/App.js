@@ -65,6 +65,11 @@ class App extends Component {
 				searchResults,
 			});
 		},
+		addOwned: () => {
+			this.setState({
+				searchResults: this.state.ownedLibrary,
+			});
+		},
 		addCreatedLibrary: (books) => {
 			this.setState({ createdLibrary: books });
 		},
@@ -98,9 +103,7 @@ class App extends Component {
 		addSection: (newSection, book_id) => {
 			const current = this.state.getCreatedBook(book_id);
 			const currentIndex = this.state.createdLibrary.indexOf(current);
-			this.state.createdLibrary[currentIndex].content === null
-				? (this.state.createdLibrary[currentIndex].content = newSection)
-				: this.state.createdLibrary[currentIndex].content.push(newSection);
+			this.state.createdLibrary[currentIndex].content.push(newSection);
 			BookApiService.addChapter(current);
 		},
 		addImageData: (imageData) => {

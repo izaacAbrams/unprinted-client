@@ -1,11 +1,14 @@
 .BookDisplay__img {
 	height: 400px;
+	align-self: center;
 }
 
 .BookDisplay__book {
-	display: flex;
-	margin: 50px;
 	background-color: #efefe0;
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+	padding: 5%;
 }
 
 .BookDisplay__info {
@@ -13,7 +16,6 @@
 	padding: 15px 30px;
 	display: flex;
 	flex-direction: column;
-	align-items: baseline;
 }
 
 .BookDisplay__info > h1 {

@@ -6,7 +6,8 @@
 }
 
 .BookReader__chapter {
-	margin: 50px 15%;
+	padding: 50px 15%;
+	background-color: #efefe0;
 }
 
 .BookReader__chapter_content {
@@ -27,7 +28,8 @@
 	background: none;
 	border: 0;
 	cursor: pointer;
-	padding: 100px;
+	/* padding: 100px; */
+	padding: 20px;
 }
 
 .BookReader__btnRight {
@@ -38,18 +40,21 @@
 	background: none;
 	border: 0;
 	cursor: pointer;
-	padding: 100px;
+	/* padding: 100px; */
+	padding: 20px;
 }
 
 .BookReader__btnFinish {
 	position: absolute;
 	right: 0;
 	height: 100%;
-	font-size: 24px;
+	font-size: 16px;
+	text-decoration: underline;
 	background: none;
 	border: 0;
 	cursor: pointer;
-	padding: 100px;
+	/* padding: 100px; */
+	padding: 20px;
 }
 
 .BookReader__nextBtn {

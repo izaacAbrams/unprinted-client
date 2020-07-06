@@ -1,7 +1,26 @@
 .AddChapter {
-	margin: 20px;
+	padding: 50px;
+	background-color: #efefe0;
+	height: calc(100vh - 170px);
 }
 
 .AddChapter__input {
 	width: 30%;
+	padding: 5px;
+	font-size: 16px;
+	margin: 0 15px;
+}
+
+.AddChapter__chapter {
+	margin-left: 30px;
+}
+
+.AddChapter__label {
+	font-family: "Montserrat", sans-serif;
+}
+
+.AddChapter__title {
+	font-family: "EB Garamond", serif;
+	padding-left: 30px;
+	font-size: 36px;
 }

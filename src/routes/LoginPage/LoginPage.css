@@ -3,7 +3,7 @@
 	flex-direction: column;
 	align-items: center;
 	background-color: #efefe0;
-	height: calc(100vh - 70px);
+	height: calc(100vh - 50px);
 }
 
 .LoginForm__title {
@@ -13,13 +13,15 @@
 
 .LoginForm__label {
 	font-family: "EB Garamond", serif;
-	font-size: 24px;
+	/* font-size: 24px; */
+	font-size: 16px;
 }
 
 .LoginForm__input {
 	padding: 5px;
 	margin: 10px;
-	font-size: 16px;
+	/* font-size: 16px; */
+	font-size: 14px;
 }
 
 .LoginForm__form {

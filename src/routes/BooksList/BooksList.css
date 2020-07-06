@@ -9,16 +9,31 @@
 }
 
 .BooksList__input {
-	width: 30%;
+	width: 50%;
 	font-size: 16px;
 	padding: 5px 10px;
 	margin: 15px;
 	border-radius: 15px;
 	border: 1px solid #1c1f22;
+	background-color: #efefe0;
 }
 
 .BooksList__empty {
 	text-align: center;
 	font-size: 24px;
 	font-family: "EB Garamond", serif;
+}
+
+.BooksList__button {
+	background: none;
+	font-family: "EB Garamond", serif;
+	font-size: 12px;
+	padding: 2px 5px;
+	margin: 0 10px;
+	border: 1px solid #1c1f22;
+	border-radius: 15px;
+}
+
+.BooksList__button:hover {
+	background-color: #efefe0;
 }

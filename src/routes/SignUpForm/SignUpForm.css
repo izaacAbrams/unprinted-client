@@ -3,7 +3,7 @@
 	flex-direction: column;
 	align-items: center;
 	background-color: #efefe0;
-	height: calc(100vh - 70px);
+	height: calc(100vh - 50px);
 }
 
 .SignUpForm__title {
@@ -13,13 +13,12 @@
 
 .SignUpForm__label {
 	font-family: "EB Garamond", serif;
-	font-size: 24px;
+	font-size: 16px;
 }
 
 .SignUpForm__input {
-	padding: 5px;
 	margin: 10px;
-	font-size: 16px;
+	font-size: 14px;
 }
 
 .SignUpForm__form {
@@ -33,7 +32,7 @@
 	background-color: #efefe0;
 	border: 1px solid #1c1f22;
 	border-radius: 5px;
-	padding: 5px 10px;
+	padding: 3px;
 	margin: 15px;
 }
 

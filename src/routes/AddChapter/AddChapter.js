@@ -18,12 +18,17 @@ class AddChapter extends Component {
 	render() {
 		return (
 			<div className="AddChapter">
-				<label htmlFor="AddChapter__chapter">Chapter:</label>
-				<input
-					type="text"
-					className="AddChapter__input"
-					id="AddChapter__chapter"
-				/>
+				<h1 className="AddChapter__title">Add Chapter</h1>
+				<div className="AddChapter__chapter">
+					<label className="AddChapter__label" htmlFor="AddChapter__chapter">
+						Chapter:
+					</label>
+					<input
+						type="text"
+						className="AddChapter__input"
+						id="AddChapter__chapter"
+					/>
+				</div>
 				<MyEditor handleSubmit={(content) => this.handleSubmit(content)} />
 			</div>
 		);

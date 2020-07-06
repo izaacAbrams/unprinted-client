@@ -1,11 +1,10 @@
 .LandingPage {
 	background-image: url("../../images/landing_page.svg");
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: right;
 	background-size: cover;
-	height: calc(100vh - 70px);
+	height: calc(100vh - 50px);
 	position: absolute;
-	padding-right: 55%;
 }
 
 .LandingPage__title {
@@ -17,6 +16,8 @@
 
 .LandingPage__p {
 	font-family: "Montserrat", sans-serif;
+	border-radius: 10px;
+	background-color: rgba(239, 239, 224, 0.8);
 	padding: 20px;
 	margin: 20px;
 	line-height: 24px;

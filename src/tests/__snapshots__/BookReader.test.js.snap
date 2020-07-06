@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`bookreader component renders the UI as expected 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <div
+      className="Nav"
+    >
+      <div
+        className="Nav__logo"
+      >
+        <a
+          className="Nav__link Nav__link_logo"
+          href="/"
+          onClick={[Function]}
+        >
+          <img
+            alt="Unprinted Logo"
+            className="Nav__logo_img"
+            src="logo.png"
+          />
+          Unprinted
+        </a>
+      </div>
+      <a
+        className="Nav__link"
+        href="/book-list"
+        onClick={[Function]}
+      >
+        Library
+      </a>
+      <div
+        className="Header__not-logged-in"
+      >
+        <div
+          className="Nav__section"
+        >
+          <a
+            className="Nav__register Nav__link"
+            href="/signup"
+            onClick={[Function]}
+          >
+            Register
+          </a>
+          <a
+            className="Nav__login Nav__link"
+            href="/login"
+            onClick={[Function]}
+          >
+            Log in
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <p>
+    Loading
+  </p>
+  <div
+    className="LandingPage"
+  >
+    <h1
+      className="LandingPage__title"
+    >
+      Unprinted
+    </h1>
+    <p
+      className="LandingPage__p"
+    >
+      The crowdsourced ebook library. If you are looking for something to read, check out the library! Without signing up/logging in you are able to view general information about the book, such as the cover image, summary, and price. In order to purchase a book and read it, you must first log in and then you will have the option to puchase the book.
+      <br />
+      <br />
+      If you are an author, create an account to start on a new book. Once the initial book information has been made, you can go to the 'my-books' page in your account to add new chapters. 
+      <br />
+      <br />
+       To demo the login, use the email leela@gmail.com and the password leelapassword. To demo purchasing a book, use the card number 4242 4242 4242 4242 with any name/CVC/zip code.
+    </p>
+    <a
+      className="LandingPage__link"
+      href="/book-list"
+      onClick={[Function]}
+    >
+      Check out the library
+    </a>
+  </div>
+</div>
+`;
