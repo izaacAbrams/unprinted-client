@@ -10,6 +10,7 @@ class Account extends Component {
 	static contextType = UnprintedContext;
 
 	componentDidMount() {
+		//if user is already set up with stripe account then they can create a new book
 		BookApiService.hasStripeConnection(
 			TokenService.readJwtToken().user_id
 		).then((res) => this.context.updateStripeConnected(res.connected));

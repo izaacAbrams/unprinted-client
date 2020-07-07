@@ -3,6 +3,7 @@ import "./BooksItem.css";
 
 class BooksItem extends Component {
 	render() {
+		//if title is too long, shorten with ...
 		const bookTitle =
 			this.props.book.title.length > 24 ? (
 				<p className="BooksItem__title">
