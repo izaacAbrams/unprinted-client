@@ -31,20 +31,22 @@ Unprinted is a crowdsourced, early access book library that gives the reader con
 
 ## Screenshots
 
-<img src="https://github.com/izaacAbrams/timespaces-app/blob/master/src/images/LandingPage.PNG" alt="Login Page" width="500"/>
+<img src="https://res.cloudinary.com/unprinted/image/upload/v1594062755/screenshots/LandingPage_vuzpbp.png" alt="Landing Page" width="500"/>
 
-The landing page, where you can demo creating a new appointment, or sign up.
+The landing page, which has a description of the app and how to use it.
 
-<img src="https://github.com/izaacAbrams/timespaces-app/blob/master/src/images/LoginPage.PNG" alt="Login Page" width="500"/>
+<img src="https://res.cloudinary.com/unprinted/image/upload/v1594062755/screenshots/BooksList_dxm4tp.png" alt="Book List" width="500"/>
 
-<img src="https://github.com/izaacAbrams/timespaces-app/blob/master/src/images/Appointments.PNG" alt="Login Page" width="500"/>
+The searchable library, where you can view a list of available books.
 
-An example of a schedule with multiple appointments for the day.
+<img src="https://res.cloudinary.com/unprinted/image/upload/v1594062755/screenshots/BookDisplay_hooqgp.png" alt="Book Page" width="500"/>
 
-<img src="https://github.com/izaacAbrams/timespaces-app/blob/master/src/images/Schedules.PNG" alt="Login Page" width="500"/>
+An example of a books display page. User is able to either purchase book, or read book if owned.
 
-An example of a users view with multiple schedules.
+<img src="https://res.cloudinary.com/unprinted/image/upload/v1594079152/screenshots/Book_Reader_hwbdnr.png" alt="Book Reader" width="500"/>
+
+An example of the layout of a book when reading.
 
 ## Tech Used
 
-React, Redux/Router, Momentjs, JWT, node.js, Express, PostgreSQL, Javascript ES6, HTML, CSS
+React, Redux/Router, Stripe, Cloudinary, JWT, node.js, Express, PostgreSQL, Javascript ES6, HTML, CSS
