@@ -11,9 +11,12 @@
 	text-decoration: none;
 	padding: 10px;
 	margin: 15px;
-	/* border: 2px solid #1c1f22; */
 }
 
 .Account__link:hover {
 	border-bottom: 1px solid #1c1f22;
+}
+
+.disabled:hover {
+	border: none;
 }

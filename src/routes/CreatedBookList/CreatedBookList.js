@@ -57,7 +57,12 @@ class CreatedBookList extends Component {
 				</div>
 			</>
 		) : (
-			<></>
+			<>
+				<h1 className="CreatedBookList__header">Nothing here!</h1>
+				<p className="CreatedBookList__p">
+					Create a new book to find content here.
+				</p>
+			</>
 		);
 		return bookList;
 	}

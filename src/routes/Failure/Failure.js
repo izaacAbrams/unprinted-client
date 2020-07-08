@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Failure.css";
 
 class Failure extends Component {
 	render() {

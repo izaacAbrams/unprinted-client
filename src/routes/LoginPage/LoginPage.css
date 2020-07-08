@@ -11,6 +11,10 @@
 	font-size: 40px;
 }
 
+.LoginForm__section {
+	align-self: flex-end;
+}
+
 .LoginForm__label {
 	font-family: "EB Garamond", serif;
 	font-size: 16px;

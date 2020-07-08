@@ -36,7 +36,7 @@ class Account extends Component {
 						<a href={config.STRIPE_ENDPOINT} className="Account__link">
 							Connect with Stripe
 						</a>
-						<p className="Account__link">
+						<p className="Account__link disabled">
 							Connect with Stripe to create a new book.
 						</p>
 					</>

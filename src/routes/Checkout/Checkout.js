@@ -20,9 +20,11 @@ class Checkout extends Component {
 		const currentBook = this.context.library.filter(
 			(book) => book.id === parseInt(this.props.current)
 		)[0];
+
 		const request = {
 			title: currentBook.title,
-			user_id: currentBook.created_by,
+			created_by: currentBook.created_by,
+			user_id: TokenService.readJwtToken().user_id,
 			id: currentBook.id,
 		};
 		const sessionId = await BookApiService.getSession(request);

@@ -85,13 +85,9 @@ class BookReader extends Component {
 	}
 	render() {
 		let currentBook =
-			this.context.ownedLibrary !== null ||
-			this.context.createdLibrary !== null ? (
-				this.context.getCreatedBook(this.props.match.params.book_id) ||
-				this.context.getOwnedBook(this.props.match.params.book_id)
-			) : (
-				<></>
-			);
+			this.context.ownedLibrary !== null
+				? this.context.getOwnedBook(this.props.match.params.book_id)
+				: this.context.getCreatedBook(this.props.match.params.book_id);
 
 		const titlePage =
 			currentBook && this.state.currentPage === 0 ? (

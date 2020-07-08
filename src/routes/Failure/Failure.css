@@ -1,0 +1,8 @@
+.Failure {
+	text-align: center;
+	margin-top: 30%;
+}
+
+.Failure > h1 {
+	font-family: "EB Garamond", serif;
+}
