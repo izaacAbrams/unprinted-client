@@ -63,14 +63,14 @@ class BooksList extends Component {
 						Clear
 					</button>
 				</div>
-				{this.state.searched && this.context.searchResults.length === 0 ? (
+				{this.state.searched && this.context.searchResults?.length === 0 ? (
 					<p className="BooksList__empty">Sorry, no books found.</p>
 				) : (
 					<></>
 				)}
 				<div className="BooksList">
-					{this.context.searchResults.length === 0
-						? this.context.library.map((book) => {
+					{this.context.searchResults?.length === 0
+						? this.context.library?.map((book) => {
 								return (
 									<div key={book.title + book.id}>
 										<Link to={`/book/${book.id}`}>
@@ -79,7 +79,7 @@ class BooksList extends Component {
 									</div>
 								);
 						  })
-						: this.context.searchResults.map((book) => {
+						: this.context.searchResults?.map((book) => {
 								return (
 									<Link key={book.title + book.id} to={`/book/${book.id}`}>
 										<BooksItem book={book} />

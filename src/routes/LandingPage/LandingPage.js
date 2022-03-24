@@ -18,10 +18,7 @@ class LandingPage extends Component {
 					<br />
 					If you are an author, create an account to start on a new book. Once
 					the initial book information has been made, you can go to the
-					'my-books' page in your account to add new chapters. <br />
-					<br /> To demo the login, use the email leela@gmail.com and the
-					password leelapassword. To demo purchasing a book, use the card number
-					4242 4242 4242 4242 with any name/CVC/zip code.
+					'my-books' page in your account to add new chapters.
 				</p>
 				<Link className="LandingPage__link" to="/book-list">
 					Check out the library
