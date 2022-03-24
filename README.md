@@ -37,7 +37,7 @@ The landing page, which has a description of the app and how to use it.
 
 <img src="https://res.cloudinary.com/unprinted/image/upload/v1594062755/screenshots/BooksList_dxm4tp.png" alt="Book List" width="500"/>
 
-The searchable library, where you can view a list of available books.
+The searchable library, where you can view a list of all available books.
 
 <img src="https://res.cloudinary.com/unprinted/image/upload/v1594062755/screenshots/BookDisplay_hooqgp.png" alt="Book Page" width="500"/>
 
